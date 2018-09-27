@@ -16,6 +16,8 @@ input, textarea, select {
 // fonts
 // ========================================
 
+@import url('https://fonts.googleapis.com/css?family=Lato|Spectral:500');
+
 // @font-face {
 //   font-family: 'font-name';
 //   font-weight: normal;
@@ -220,7 +222,7 @@ h6 {
 // Display text
 // ========================================
 
-// Set h1 through h6 according to typical heading use, 
+// Set h1 through h6 according to typical heading use,
 // if additional styles are needed setup display classes
 // for recurring special use cases
 //
@@ -229,6 +231,7 @@ h6 {
   font-size: $display1-font-size;
   font-weight: $display1-font-weight;
   line-height: $display1-line-height;
+  text-transform: uppercase;
 
   @include mq($from: tablet) {
     font-size: $display1-font-size-tablet;

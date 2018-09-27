@@ -48,7 +48,7 @@
 
 // Light
 .btn--light {
-  @include button-variant($color-white, transparent, $color-white);
+  @include button-variant($color-grey-dark, $color-white, $color-white);
 }
 
 // Dark

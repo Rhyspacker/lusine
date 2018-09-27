@@ -3,6 +3,16 @@
 // ========================================
 
 .header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: black;
+  padding: $spacer/2;
 }
 
 // ==============================
@@ -10,6 +20,164 @@
 // ========================================
 
 .header__wpr {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+// ==============================
+// Header logo
+// ========================================
+
+.header__logo {
+  flex: 1 1 auto;
+  width: 150px;
+
+  .display-1 {
+    margin-bottom: 0;
+  }
+}
+
+
+// ==============================
+// Header nav
+// ========================================
+
+.header__nav {
+  @include list-unstyled;
+  width: calc(100vw - 115px);
+  height: calc(100% - 60px);
+  position: fixed;
+  top: 60px;
+  right: -100%;
+  margin-bottom: 0;
+  flex: 1 1 auto;
+  text-align: right;
+  vertical-align: middle;
+  background: $color-black;
+  opacity: 0;
+  transition: right 0.3s, opacity 0.3s;
+
+  .is--active & {
+    right: 0;
+    opacity: 1;
+  }
+
+  @include mq($until: desktop) {
+    &:before {
+      content: '';
+      display: block;
+      width: 115px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      background: blue;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+
+    &__li {
+      flex: 0 0 60px;
+      width: 100%;
+      padding-left: $spacer-x*1.5;
+    }
+  }
+
+  @include mq($from: desktop) {
+    display: block;
+    position: relative;
+    top: auto;
+    right: auto;
+    background: none;
+  }
+
+  &__li {
+    @include mq($from: desktop) {
+      display: inline-block;
+    }
+  }
+}
+
+// ==============================
+// Header nav trigger
+// ========================================
+
+.header__nav__trigger {
+  display: block;
+  width: 44px;
+  height: 44px;
+  position: fixed;
+  top: 8px;
+  right: 8px;
+
+  @include button-unstyled;
+  &:focus {
+    outline: none;
+  }
+
+  @include mq($from: desktop) {
+    display: none;
+  }
+
+  &.is--active {
+
+  }
+
+  span {
+    position: relative;
+    left: 0;
+    display: block;
+    width: 80%;
+    height: 2px;
+    background: $color-white;
+    transition: all .3s cubic-bezier(.27,.16,.36,.99);
+
+    &:not(:nth-of-type(3)) {
+      margin-bottom: 8px;
+    }
+
+    &:nth-of-type(4) {
+      position: absolute;
+      top: 50%;
+      transform: rotate(45deg) translateY(-50%) scale(0);
+    }
+    &:nth-of-type(5) {
+      position: absolute;
+      top: 50%;
+      transform: rotate(-45deg) translateY(-50%) scale(0);
+    }
+  }
+
+  &.is--active {
+    span {
+      &:nth-of-type(1) {
+        left: -140%;
+        opacity: 0;
+      }
+      &:nth-of-type(2) {
+        left: -180%;
+        opacity: 0;
+      }
+      &:nth-of-type(3) {
+        left: -220%;
+        opacity: 0;
+      }
+      &:nth-of-type(4) {
+        transform: rotate(45deg) translateY(-50%) scale(1);
+      }
+      &:nth-of-type(5) {
+        transform: rotate(-45deg) translateY(-50%) scale(1);
+      }
+    }
+  }
 }
 
 // ====================

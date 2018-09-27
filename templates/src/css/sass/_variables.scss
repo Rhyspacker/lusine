@@ -132,8 +132,8 @@ $container-max-widths: (
 
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: "Helvetica Neue", Arial, sans-serif !default;
-$font-family-serif: Georgia, "Times New Roman", Times, serif;
+$font-family-sans-serif: 'Lato', sans-serif;
+$font-family-serif: 'Spectral', serif;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $font-family-base: $font-family-sans-serif;
 
@@ -177,19 +177,19 @@ $font-size-h6-tablet: 18px;
 $font-size-h6-desktop: 24px;
 
 $headings-margin-bottom: ($spacer / 2);
-$headings-font-family: $font-family-base;
-$headings-font-weight: bold;
-$headings-line-height: 1.1;
+$headings-font-family: $font-family-serif;
+$headings-font-weight: 500;
+$headings-line-height: 1.2;
 $headings-color: inherit;
 
 // Display sizing
 //
-$display1-font-family: $font-family-base;
-$display1-font-size: 30px;
-$display1-font-size-tablet: 50px;
-$display1-font-size-desktop: 64px;
+$display1-font-family: $font-family-serif;
+$display1-font-size: 24px;
+$display1-font-size-tablet: 24px;
+$display1-font-size-desktop: 28px;
 $display1-font-weight: bold;
-$display1-line-height: 1;
+$display1-line-height: 00.8;
 
 $display2-font-family: $font-family-base;
 $display2-font-size: 16px;
@@ -261,11 +261,11 @@ $table-border-color: $color-grey;
 
 $btn-border-radius: 0px;
 $btn-font-family: $font-family-base;
-$btn-font-size: 16px;
+$btn-font-size: 18px;
 $btn-font-weight: bold;
 $btn-line-height: 40px;
 $btn-padding-x: 20px;
-$btn-padding-y: 0px;
+$btn-padding-y: 5px;
 $btn-block-spacing-y: 8px;
 $input-btn-border-width: $border-width;
 

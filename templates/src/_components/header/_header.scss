@@ -13,6 +13,7 @@
   height: 60px;
   background: black;
   padding: $spacer/2;
+  z-index: 90000;
 }
 
 // ==============================
@@ -24,6 +25,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 1250px;
+  margin: 0 auto;
 }
 
 
@@ -47,7 +50,7 @@
 
 .header__nav {
   @include list-unstyled;
-  width: calc(100vw - 115px);
+  width: calc(100vw - 130px);
   height: calc(100% - 60px);
   position: fixed;
   top: 60px;
@@ -57,25 +60,27 @@
   text-align: right;
   vertical-align: middle;
   background: $color-black;
-  opacity: 0;
-  transition: right 0.3s, opacity 0.3s;
-
-  .is--active & {
-    right: 0;
-    opacity: 1;
-  }
 
   @include mq($until: desktop) {
     &:before {
       content: '';
       display: block;
-      width: 115px;
+      width: 130px;
       height: 100%;
       position: absolute;
       top: 0;
       left: 0;
       transform: translateX(-100%);
-      background: blue;
+      background: url(../img/decor/decor-mobile.jpg);
+      background-position: center center;
+      background-size: cover;
+      opacity: 0;
+      transition: opacity 0.3s;
+
+      .is--active & {
+        transition: opacity 1s;
+        opacity: 1;
+      }
     }
 
     display: flex;
@@ -84,10 +89,23 @@
     align-items: center;
     text-align: left;
 
+    opacity: 0;
+    transition: right 0.3s, opacity 0.3s;
+
+    .is--active & {
+      right: 0;
+      opacity: 1;
+    }
+
     &__li {
-      flex: 0 0 60px;
+      flex: 0 0 40px;
       width: 100%;
       padding-left: $spacer-x*1.5;
+      font-size: 5vh;
+
+      @media screen and (max-height: 320px) {
+        flex: 0 0 30px;
+      }
     }
   }
 
@@ -97,9 +115,20 @@
     top: auto;
     right: auto;
     background: none;
+
+    li {
+      &:not(:last-child) {
+        margin-right: $spacer-x*2;
+      }
+    }
   }
 
   &__li {
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
     @include mq($from: desktop) {
       display: inline-block;
     }
@@ -115,7 +144,8 @@
   width: 44px;
   height: 44px;
   position: fixed;
-  top: 8px;
+  z-index: 99999;
+  top: 6px;
   right: 8px;
 
   @include button-unstyled;
@@ -136,7 +166,7 @@
     left: 0;
     display: block;
     width: 80%;
-    height: 2px;
+    height: 3px;
     background: $color-white;
     transition: all .3s cubic-bezier(.27,.16,.36,.99);
 
@@ -146,7 +176,7 @@
 
     &:nth-of-type(4) {
       position: absolute;
-      top: 50%;
+      top: 49%;
       transform: rotate(45deg) translateY(-50%) scale(0);
     }
     &:nth-of-type(5) {

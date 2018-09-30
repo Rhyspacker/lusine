@@ -5,4 +5,48 @@ layout: default
 meta_url: home
 ---
 
-Page specific content
+{{> hero }}
+<div class="container">
+
+  <div class="section">
+    <div class="section__block">
+      <div class="figure">
+        <picture class="figure__media">
+          <source srcset="img/content/home-video.jpg" media="(min-width: {{project.image_breakpoint_md}})">
+          <img src="img/content/home-video-mobile.jpg" alt="">
+        </picture>
+      </div>
+    </div>
+  </div>
+
+  <section class="section mt-8-tablet-up mw-700">
+    <div class="section__header text--center-tablet-down pb-3">
+      <h2 class="h2 text--uppercase">About</h2>
+      <span class="divider divider--sm divider--center-tablet-down" aria-hidden="true"></span>
+      <img src="img/content/jeff-mcilwain.jpg" class="img-fluid pt-2">
+    </div>
+    <div class="section__block">
+      <p class="lead">Jeff McIlwain has been producing his diverse, melodic strain of abstract electronic music as Lusine for a decade and a half.</p>
+      <p>Originally a Texas native, McIlwain moved to the West Coast in the late '90s to study electronic music and sound design at CalArts. It was during this time in L.A. that he would meet Shad T. Scott, who subsequently put out Lusine's self-titled debut on his Isophlux imprint. McIlwain relocated to his current home of Seattle in late 2002 and began steadily releasing his music on Ghostly International. He has also contributed tracks to various compilations and remix releases from Mute, !K7, Kompakt, Asthmatic Kitty, and Shitkatapult.</p>
+      <p>As Lusine, McIlwain has performed throughout the US and abroad, including sets at London's esteemed Fabric nightclub (RIP), Tokyo's Unit, Berlin's Watergate, and Melbourne's Electric Owl. Recent tour dates include appearances with electronic luminaries like Tipper and Blockhead, as well as playing at 2016's Further Future festival with a live drummer (Trent Moorman).</p>
+      <p>In addition to his Lusine productions, McIlwain has been involved with various film projects that include The Sitter (Jonah Hill, 2011) and two David Gordon Green movies, Snow Angels (featuring Kate Beckinsale and Sam Rockwell, 2007) and Joe (Nicolas Cage, Tye Sheridan, 2013) with music writing partner David Wingo. McIlwain is also currently collaborating with Wingo on the film score for Meredith Danluck's upcoming State Like Sleep. Following Lusine's acclaimed The Waiting Room from 2013 and 2014's Arterial EP (which was accompanied by a groundbreaking video from Christophe Thockler), comes the new full-length, Sensorimotor, set for release in early 2017 on Ghostly International.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section__block">
+      <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

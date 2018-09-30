@@ -1,0 +1,77 @@
+// ==============================
+// Section
+// ========================================
+
+.section {
+  position: relative;
+  padding-bottom: ($section-spacer-y*2.5);
+  padding-top: ($section-spacer-y * 4.5);
+
+  @include mq($until: tablet) {
+    position: relative;
+  }
+
+  @include mq($from: tablet) {
+    padding-bottom: ($section-spacer-y * 4);
+    padding-top: ($section-spacer-y * 4);
+  }
+
+  @include mq($from: desktop) {
+    padding-bottom: ($section-spacer-y * 6);
+    padding-top: ($section-spacer-y * 6);
+  }
+}
+
+// ==============================
+// Section header
+// ========================================
+
+.section__header, {
+  padding-bottom: ($section-spacer-y * 3);
+
+  @include mq($from: tablet) {
+    position: relative;
+    padding-bottom: ($section-spacer-y * 1.25);
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateY(-85%);
+    }
+  }
+
+  @include mq($from: desktop) {
+    padding-bottom: ($section-spacer-y * 1.5);
+  }
+
+
+
+  // Remove margin-bottom from last child in .section__header
+  //
+  .section__inner > :last-child,
+  .container > :last-child,
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  // &--slim {
+  //   padding-bottom: ($section-spacer-y * 2);
+  //   padding-top: ($section-spacer-y * 2);
+  // }
+}
+
+// ==============================
+// Section block and footer
+// ========================================
+
+.section__block {
+  position: relative;
+}
+
+.section__footer {
+  padding-top: $section-spacer-y;
+
+  @include mq($from: tablet) {
+    padding-top: ($section-spacer-y * 1.5);
+  }
+}

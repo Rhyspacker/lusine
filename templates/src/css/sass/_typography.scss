@@ -16,7 +16,7 @@ input, textarea, select {
 // fonts
 // ========================================
 
-@import url('https://fonts.googleapis.com/css?family=Lato|Spectral:500');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Spectral:500');
 
 // @font-face {
 //   font-family: 'font-name';
@@ -232,6 +232,7 @@ h6 {
   font-weight: $display1-font-weight;
   line-height: $display1-line-height;
   text-transform: uppercase;
+  color: $color-grey-dark;
 
   @include mq($from: tablet) {
     font-size: $display1-font-size-tablet;

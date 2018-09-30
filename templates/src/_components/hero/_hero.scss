@@ -1,0 +1,41 @@
+// ==============================
+// hero
+// ========================================
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 60px 20px 20px 20px;
+  @include mq($from: tablet) {
+    height: calc(100% - 60px);
+  }
+}
+
+// ==============================
+// hero element
+// ========================================
+
+.hero__content {
+  width: 100%;
+
+  @include mq($from: tablet) {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+}
+
+// ====================
+// hero modifiers
+// ========================================
+
+// .hero--modifier {
+// }

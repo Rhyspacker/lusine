@@ -1,0 +1,36 @@
+// ==============================
+// Divider
+// ========================================
+
+.divider {
+  display: block;
+  height: 3px;
+  background: $color-white;
+}
+
+
+// ==============================
+// Divider modifiers
+// ========================================
+
+.divider--sm {
+  width: 20px;
+}
+
+.divider--lg {
+  width: 120px;
+}
+
+.divider--full {
+  width: 100%;
+}
+
+.divider--center {
+  margin: 0 auto;
+}
+
+@include mq($until: tablet) {
+  .divider--center-tablet-down {
+    margin: 0 auto;
+  }
+}

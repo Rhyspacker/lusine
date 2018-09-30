@@ -19,6 +19,13 @@
 // Components
 // ========================================
 
+
+// ====================
+// Options
+// ========================================
+
+$enable-grid-classes: true !default;
+
 // ====================
 // Colors
 // ========================================
@@ -57,8 +64,8 @@ $color-youtube: #cd201f;
 
 // Body colors
 //
-$body-bg: $color-white;
-$body-color: $color-grey-dark;
+$body-bg: $color-black;
+$body-color: $color-white;
 
 // ====================
 // Options
@@ -81,7 +88,7 @@ $spacer-y: $spacer;
 // Borders
 // ========================================
 
-$border-width: 1px;
+$border-width: 3px;
 $border-color: $color-grey;
 
 // ====================
@@ -93,6 +100,12 @@ $link-decoration: underline;
 $link-hover-color: darken($link-color, 15%);
 $link-hover-decoration: none;
 $link-hover-transition-time: 0.15s;
+
+// ====================
+// Section
+// ========================================
+
+$section-spacer-y: 20px;
 
 // ====================
 // Breakpoints
@@ -111,19 +124,41 @@ $mq-breakpoints: (
   wide:    1441px
 );
 
-// ====================
-// Grid: Containers and Gutters
-// ========================================
-
-$gutter-width: 20px;
-
-// Max widths for .container _layout.scss
+// Grid breakpoints
 //
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints);
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
 $container-max-widths: (
   tablet:  768px,
   desktop: 992px,
   wide:    1280px
 );
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:                12 !default;
+$grid-gutter-width:           30px !default;
 
 
 // ====================
@@ -152,9 +187,9 @@ $font-weight-base: $font-weight-normal;
 $line-height-base: 1.3335; // 24px based on 18px base font
 $line-height-base-desktop: 1.4545454545; // 32px based on 22px base font
 
-$font-size-h1: 34px;
-$font-size-h1-tablet: 38px;
-$font-size-h1-desktop: 56px;
+$font-size-h1: 28px;
+$font-size-h1-tablet: 32px;
+$font-size-h1-desktop: 40px;
 
 $font-size-h2: 24px;
 $font-size-h2-tablet: 28px;
@@ -208,8 +243,8 @@ $display3-line-height: 1;
 
 // Lead
 //
-$lead-font-size: 18px;
-$lead-font-weight: 500;
+$lead-font-size: 22px;
+$lead-font-weight: 700;
 $lead-line-height: 30px;
 
 // Muted

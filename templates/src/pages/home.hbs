@@ -10,11 +10,16 @@ meta_url: home
 
   <div class="section">
     <div class="section__block">
-      <div class="figure">
-        <picture class="figure__media">
-          <source srcset="img/content/home-video.jpg" media="(min-width: {{project.image_breakpoint_md}})">
-          <img src="img/content/home-video-mobile.jpg" alt="">
-        </picture>
+      <div class="video-modal">
+        <div class="figure mb-0">
+          <picture class="figure__media">
+            <source srcset="img/content/home-video.jpg" media="(min-width: {{project.image_breakpoint_md}})">
+            <img src="img/content/home-video-mobile.jpg" alt="">
+          </picture>
+        </div>
+        <button class="video-modal__trigger">
+          {{> icon--play }}
+        </button>
       </div>
     </div>
   </div>

@@ -10,22 +10,20 @@ meta_url: home
 
   <div class="section">
     <div class="section__block">
-      <div class="video-modal">
-        <div class="figure mb-0">
-          <picture class="figure__media">
-            <source srcset="img/content/home-video.jpg" media="(min-width: {{project.image_breakpoint_md}})">
-            <img src="img/content/home-video-mobile.jpg" alt="">
-          </picture>
-        </div>
-        <button class="video-modal__trigger">
-          {{> icon--play }}
-        </button>
+      <div class="figure mb-0">
+        <picture class="figure__media">
+          <source srcset="img/content/home-video.jpg" media="(min-width: {{project.image_breakpoint_md}})">
+          <img src="img/content/home-video-mobile.jpg" alt="">
+        </picture>
       </div>
+      <button class="video-modal__trigger" data-iframe="https://www.youtube.com/embed/10Jg_25ytU0?rel=0">
+        {{> icon--play }}
+      </button>
     </div>
   </div>
 
   <section class="section mt-8-tablet-up mw-700">
-    <div class="section__header text--center-tablet-down pb-3">
+    <div class="section__header text--center-tablet-down">
       <h2 class="h2 text--uppercase">About</h2>
       <span class="divider divider--sm divider--center-tablet-down" aria-hidden="true"></span>
       <img src="img/content/jeff-mcilwain.jpg" class="img-fluid pt-2">
@@ -39,7 +37,7 @@ meta_url: home
   </section>
 
   <section class="section">
-    <div class="section__header text--center pb-3">
+    <div class="section__header text--center">
       <h2 class="h2 text--uppercase">Latest Work</h2>
       <span class="divider divider--sm divider--center" aria-hidden="true"></span>
     </div>
@@ -74,10 +72,13 @@ meta_url: home
         </div>
       </div>
     </div>
+    <div class="section__footer text--center">
+      <a href="" class="btn btn--light">See more</a>
+    </div>
   </section>
 
-  <section class="section mt-8-tablet-up">
-    <div class="section__header text--center pb-3">
+  <section class="section">
+    <div class="section__header text--center">
       <h2 class="h2 text--uppercase">Live dates</h2>
       <span class="divider divider--sm divider--center" aria-hidden="true"></span>
     </div>
@@ -101,6 +102,9 @@ meta_url: home
           </tr>
         </tbody>
       </table>
+    </div>
+    <div class="section__footer text--center">
+      <a href="" class="btn btn--light">See more</a>
     </div>
   </section>
 

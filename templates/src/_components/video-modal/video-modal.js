@@ -5,34 +5,60 @@
 app.videoModal = {
 
   config: {
-    component: '.video-modal',
+    modal: '.video-modal',
+    trigger: '.video-modal__trigger',
+    closeTrigger: '.video-modal__close',
+    overlay: '.video-modal__overlay',
   },
 
   isActive: false,
 
-  openModal: function(component) {
+  openModal: function(iframeSrc) {
     var self = this;
+
+    var modalHtml = '<div class="video-modal"><div class="video-modal__inner"><iframe width="100%" height="100%" src="'+iframeSrc+'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div><button class="video-modal__close"><span></span><span></span></button></div><div class="video-modal__overlay"></div>';
+    var modalElement = document.createElement("div");
+    app.globals.body.appendChild(modalElement);
+    modalElement.outerHTML = modalHtml;
+    self.handleClose();
   },
 
-  closeModal: function(component) {
+  handleClose: function() {
     var self = this;
+    var modal = document.querySelector(self.config.modal);
+    var closeTrigger = document.querySelector(self.config.closeTrigger);
+    var overlay = document.querySelector(self.config.overlay);
+
+    closeTrigger.addEventListener("click", function() {
+      modal.remove();
+      overlay.remove();
+    })
+
+    overlay.addEventListener("click", function() {
+      modal.remove();
+      this.remove();
+    })
   },
 
-  handleClicks: function(component) {
+  handleClicks: function(trigger) {
     var self = this;
+    var iframeSrc = trigger.getAttribute("data-iframe");
+    self.openModal(iframeSrc);
   },
 
   init: function() {
     var self = this;
 
-    var components = document.querySelectorAll(self.config.component);
+    var triggers = document.querySelectorAll(self.config.trigger);
 
-    if(components.length) {
+    if (triggers !== null) {
 
-      for(var i=0; i<components.length; i++){
-        var component = components[i];
+      for (var i = 0; i < triggers.length; i++) {
+        var trigger = triggers[i];
 
-        self.handleClicks(component);
+        trigger.addEventListener("click", function() {
+          self.handleClicks(trigger);
+        })
       }
 
     }

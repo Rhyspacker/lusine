@@ -27,11 +27,11 @@
 // ========================================
 
 .section__header, {
-  padding-bottom: ($section-spacer-y * 3);
+  padding-bottom: ($section-spacer-y * 2);
 
   @include mq($from: tablet) {
     position: relative;
-    padding-bottom: ($section-spacer-y * 1.25);
+    padding-bottom: ($section-spacer-y * 3);
     img {
       position: absolute;
       top: 0;
@@ -39,11 +39,6 @@
       transform: translateY(-85%);
     }
   }
-
-  @include mq($from: desktop) {
-    padding-bottom: ($section-spacer-y * 1.5);
-  }
-
 
 
   // Remove margin-bottom from last child in .section__header
@@ -69,9 +64,9 @@
 }
 
 .section__footer {
-  padding-top: $section-spacer-y;
+  padding-top: $section-spacer-y * 2;
 
   @include mq($from: tablet) {
-    padding-top: ($section-spacer-y * 1.5);
+    padding-top: ($section-spacer-y * 3);
   }
 }

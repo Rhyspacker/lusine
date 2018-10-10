@@ -5,7 +5,7 @@
 .hero {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   padding: 60px 20px 20px 20px;
   @include mq($from: tablet) {
     height: calc(100% - 60px);

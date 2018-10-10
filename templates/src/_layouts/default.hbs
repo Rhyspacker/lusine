@@ -37,7 +37,7 @@
   <body{{#if body_classes}} class="{{ body_classes }}"{{/if}}>
 
     {{> header}}
-
+    {{#if home}}{{> hero }}{{/if}}
     <div class="page{{#if page_classes}} {{ page_classes }}{{/if}}">
       {% body %}
     </div>

@@ -20,6 +20,13 @@ app.videoModal = {
     var modalElement = document.createElement("div");
     app.globals.body.appendChild(modalElement);
     modalElement.outerHTML = modalHtml;
+
+    var modal = document.querySelector(self.config.modal);
+    setTimeout(function () {
+      modal.classList.add(app.globals.states.active);
+      modal.focus();
+    }, 100);
+
     self.handleClose();
   },
 
@@ -30,13 +37,19 @@ app.videoModal = {
     var overlay = document.querySelector(self.config.overlay);
 
     closeTrigger.addEventListener("click", function() {
-      modal.remove();
-      overlay.remove();
+      modal.classList.remove(app.globals.states.active);
+      setTimeout(function () {
+        modal.remove();
+        overlay.remove();
+      }, 300);
     })
 
     overlay.addEventListener("click", function() {
-      modal.remove();
-      this.remove();
+      modal.classList.remove(app.globals.states.active);
+      setTimeout(function () {
+        modal.remove();
+        overlay.remove();
+      }, 300);
     })
   },
 

@@ -31,8 +31,15 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.95);
     z-index: 80000;
+  }
+
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  &.is--active {
+    opacity: 1;
   }
 }
 

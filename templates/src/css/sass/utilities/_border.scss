@@ -26,3 +26,35 @@
 .b-t-1 {
   border-top: 1px solid $border-color;
 }
+
+// ==============================
+// box border
+// ========================================
+
+.box-border {
+  position: relative;
+  border: 1px solid #fff;
+
+  margin-right: 12px;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: -1;
+    transition: top 0.3s, left 0.3s;
+  }
+  @include mq($from: desktop) {
+    &:hover {
+      &:after {
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}

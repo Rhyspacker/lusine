@@ -12,3 +12,6 @@
 
 // svgxuse 1.2.3 - https://github.com/Keyamoon/svgxuse
 //= include svgxuse/1.2.3/svgxuse.min.js
+
+// Isotope
+//= include isotope/isotope.pkgd.min.js

@@ -6,3 +6,4 @@
 
 //=include header/header.js
 //=include video-modal/video-modal.js
+//=include isotope/isotope.js

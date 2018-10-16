@@ -26,9 +26,14 @@
     transform: translate(-50%, -50%);
   }
 
-  img {
+  .card {
     width: 100%;
     max-width: 300px;
+    margin: $spacer-y*1.2 auto $spacer-y*2 auto;
+
+    @include mq($from: tablet) {
+      margin: 0 $spacer-y auto auto;
+    }
   }
 
 }

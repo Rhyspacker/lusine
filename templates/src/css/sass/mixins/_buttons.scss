@@ -86,10 +86,16 @@
 
 // Button sizes
 @mixin button-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
-  font-size: $font-size;
-  line-height: $line-height;
-  padding: $padding-y $padding-x;
+  font-size: $font-size*0.8;
+  line-height: $line-height*0.8;
+  padding: $padding-y/2 $padding-x/2;
   @include border-radius($border-radius);
+
+  @include mq($from: desktop) {
+    font-size: $font-size;
+    line-height: $line-height;
+    padding: $padding-y $padding-x;
+  }
 }
 
 // SVG Button mixin

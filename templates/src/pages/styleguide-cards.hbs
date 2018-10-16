@@ -1,0 +1,59 @@
+---
+title: "Grid - Styleguide"
+#body_classes:
+layout: styleguide
+---
+
+<div class="container">
+
+  <ol class="styleguide-breadcrumb">
+    <li class="styleguide-breadcrumb__item"><a href="index.html">Styleguide</a></li>
+    <li class="styleguide-breadcrumb__item active">Cards</li>
+  </ol>
+
+  <h1 class="mb-5">Cards</h1>
+
+
+  <h2>Card</h2>
+
+  <div class="styleguide-example">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          {{> card
+            card__media__aspect="aspect--1-1"
+            card__img__src="https://via.placeholder.com/1000x1000"
+            card__img__srcset_md="https://via.placeholder.com/1000x1000"
+            card__title="Card title"
+            card__title__classes="lead text--uppercase"
+            card__link="#"
+            card__date="18th August 2018"
+            card__text="Labore ipsum proident fugiat elit culpa esse ullamco magna dolore."
+          }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="styleguide-example-code">
+<code><pre>
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-4&quot;&gt;
+      &#123;&#123;&#62; card
+        card__media__aspect=&#34;aspect--16-9&#34;
+        card__img__src=&#34;img/temp/temp_16-9_414x232.jpg&#34;
+        card__img__srcset_md=&#34;img/temp/temp_16-9_768x432.jpg&#34;
+        card__title=&#34;Card title&#34;
+        card__title__classes=&#34;h2 text--uppercase&#34;
+        card__link=&#34;#&#34;
+        card__text=&#34;&#60;p&#62;Labore ipsum proident fugiat elit culpa esse ullamco magna dolore commodo pariatur pariatur aute excepteur duis anim commodo.&#60;/p&#62;&#34;
+        card__cta__text=&#34;Call to action&#34;
+      &#125;&#125;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre></code>
+  </div>
+
+</div>

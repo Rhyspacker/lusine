@@ -83,6 +83,7 @@ $enable-flexbox: true;
 $spacer: 20px;
 $spacer-x: $spacer;
 $spacer-y: $spacer;
+$gutter-width: 20px;
 
 // ====================
 // Borders
@@ -211,7 +212,7 @@ $font-size-h6: 16px;
 $font-size-h6-tablet: 18px;
 $font-size-h6-desktop: 24px;
 
-$headings-margin-bottom: ($spacer);
+$headings-margin-bottom: ($spacer/2);
 $headings-font-family: $font-family-serif;
 $headings-font-weight: 500;
 $headings-line-height: 1.2;
@@ -246,6 +247,13 @@ $display3-line-height: 1;
 $lead-font-size: 22px;
 $lead-font-weight: 700;
 $lead-line-height: 30px;
+
+// Small
+//
+
+$small-font-size: 14px;
+$small-font-weight: bold;
+$small-line-height: inherit;
 
 // Muted
 //
@@ -298,8 +306,8 @@ $btn-border-radius: 0px;
 $btn-font-family: $font-family-base;
 $btn-font-size: 18px;
 $btn-font-weight: bold;
-$btn-line-height: 40px;
-$btn-padding-x: 20px;
+$btn-line-height: 30px;
+$btn-padding-x: 18px;
 $btn-padding-y: 5px;
 $btn-block-spacing-y: 8px;
 $input-btn-border-width: $border-width;
@@ -312,6 +320,33 @@ $btn-sm-font-weight: 400;
 $btn-sm-line-height: 28px;
 $btn-sm-padding-x: 14px;
 $btn-sm-padding-y: 0px;
+
+// ====================
+// Card
+// ========================================
+
+$card-bg: $body-color;
+$card-color: $color-black;
+$card-margin-bottom: 32px;
+$card-padding-x: 16px;
+$card-padding-y: 16px;
+$card-padding-x-desktop: 20px;
+$card-padding-y-desktop: 20px;
+
+$card-deck-margin: 30px;
+
+$card-title-font-size: $font-size-h2;
+$card-title-font-size-lg: $font-size-h2-tablet;
+$card-meta-font-size: 21px;
+$card-icons-font-size: 14px;
+
+$card-text-link-color: $link-color;
+$card-text-link-decoration: $link-decoration;
+$card-text-link-hover-color: $link-hover-color;
+$card-text-link-hover-decoration: $link-hover-decoration;
+
+$card-social-text-font-size: 18px;
+
 
 // ====================
 // Forms

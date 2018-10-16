@@ -14,6 +14,7 @@
   background: black;
   padding: $spacer/2;
   z-index: 70000;
+  //box-shadow: 0px 35px 209px -14px rgba(255,255,255,0.31);
 }
 
 // ==============================
@@ -50,7 +51,7 @@
 
 .header__nav {
   @include list-unstyled;
-  width: calc(100vw - 130px);
+  width: calc(100vw - 120px);
   height: calc(100% - 60px);
   position: fixed;
   top: 60px;
@@ -65,7 +66,7 @@
     &:before {
       content: '';
       display: block;
-      width: 130px;
+      width: 120px;
       height: 100%;
       position: absolute;
       top: 0;
@@ -100,7 +101,7 @@
     &__li {
       flex: 0 0 40px;
       width: 100%;
-      padding-left: $spacer-x*1.5;
+      padding-left: $spacer-x;
       font-size: 5vh;
 
       @media screen and (max-height: 320px) {
@@ -176,11 +177,13 @@
 
     &:nth-of-type(4) {
       position: absolute;
-      top: 49%;
+      left: 0;
+      top: 50%;
       transform: rotate(45deg) translateY(-50%) scale(0);
     }
     &:nth-of-type(5) {
       position: absolute;
+      left: 1px;
       top: 50%;
       transform: rotate(-45deg) translateY(-50%) scale(0);
     }

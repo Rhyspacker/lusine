@@ -1,0 +1,48 @@
+{{!-- START: .card --}}
+<article class="card{{#if card__classes}} {{card__classes}}{{/if}}"{{#if schema__data}} {{{schema__data}}}{{/if}}{{#if card__onscreen}}data-onscreen="true"{{/if}}>
+  <div class="card__inner">
+    {{#if card__position}}<meta itemprop="position" content="{{card__position}}">{{/if}}
+    {{#if card__link}}<a href="{{card__link}}" {{#if card__link__scroll}}data-scroll {{/if}}>{{/if}}
+    {{#if card__img__src}}
+    <div class="card__media {{#if card__media__decor}}{{{card__media__decor}}}{{/if}}">
+      {{#if card__media__mask}}<div class="card__media__mask" itemprop="description"><p>{{card__media__mask}}</p></div>{{/if}}
+      <div class="{{#if card__media__aspect}}{{{card__media__aspect}}}{{else}}aspect--3-2{{/if}}">
+        <img alt="{{card__img__alt}}" class="img-fluid" srcset="{{card__img__src}} 414w, {{#if card__img__srcset_md}}{{card__img__srcset_md}} 768w{{/if}}" sizes="(min-width: 415px) 768px" src="{{card__img__src}}">
+      </div>
+    </div>
+    {{/if}}
+    {{#if card__icon}}
+    <div class="card__icon">
+      {{#eq card__icon__style 'tick'}}
+        {{#parseJSON '{"icon__height": "58", "icon__width": "48"}'}}
+          {{> icon--cross }}
+        {{/parseJSON}}
+      {{/eq}}
+      {{#eq card__icon__style 'cross'}}
+        {{#parseJSON '{"icon__height": "58", "icon__width": "48"}'}}
+          {{> icon--cross }}
+        {{/parseJSON}}
+      {{/eq}}
+    </div>
+    {{/if}}
+    {{#if card__link}}</a>{{/if}}
+    {{#if (or card__title card__text)}}<div class="card__body">{{/if}}
+      {{#if card__title}}
+      <h2 class="card__title{{#if card__title__classes}} {{card__title__classes}}{{/if}}" itemprop="name">
+        {{#if card__link}}<a href="{{card__link}}"  {{#if card__link__scroll}}data-scroll {{/if}}>{{/if}}
+          {{{card__title}}}
+        {{#if card__link}}</a>{{/if}}
+      </h2>
+      {{/if}}
+      {{#if card__date}}<div class="card__date small">{{card__date}}</div>{{/if}}
+      {{#if card__text}}<p class="mb-0">{{{card__text}}}</p>{{/if}}
+      {{#if card__cta__text}}<a href="{{#if card__link}}{{card__link}}{{/if}}" class="text--uppercase card__cta" {{#if card__link__scroll}}data-scroll {{/if}}>{{{card__cta__text}}}</a>{{/if}}
+    {{#if (or card__title card__text)}}</div>{{/if}}
+    {{#if card__footer}}
+    <div class="card__footer">
+
+    </div>
+    {{/if}}
+  </div>
+</article>
+{{!-- END: .card --}}

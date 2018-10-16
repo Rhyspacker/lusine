@@ -77,6 +77,25 @@
 }
 
 // ====================
+// button with icon
+// ========================================
+
+.btn--external {
+  position: relative;
+  padding-right: 40px;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    background: svg-url('<svg height="22" width="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 1024"><path d="M640 768H128V257.9l128-1.9V128H0v768h768V576H640v192zM384 128l128 128-192 192 128 128 192-192 128 128V128H384z" fill="#{$color-white}"/></svg>');
+  }
+}
+
+// ====================
 // button link
 //
 // Make a button look and behave like a link

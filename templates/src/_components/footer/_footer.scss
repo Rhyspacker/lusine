@@ -3,10 +3,12 @@
 // ========================================
 
 .footer {
+  position: relative;
   width: 100%;
   color: $color-white;
   margin-top: $spacer-y*2.5;
-
+  padding-bottom: $spacer-y/2;
+  z-index: $zindex-footer;
   @include mq($from: desktop) {
     margin-top: $spacer-y*5;
   }

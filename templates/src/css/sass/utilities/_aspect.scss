@@ -22,6 +22,10 @@
   @include maintain-ratio(2 1);
 }
 
+.aspect--2-3 {
+  @include maintain-ratio(2 3);
+}
+
 .aspect--16-9 {
   @include maintain-ratio(16 9);
 }

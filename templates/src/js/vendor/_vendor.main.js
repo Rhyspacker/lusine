@@ -15,3 +15,13 @@
 
 // Isotope
 //= include isotope/isotope.pkgd.min.js
+
+// Scroll Magic
+var homePage = document.querySelector(".home");
+
+// If home page then we'll run
+if (homePage) {
+  //= include scrollmagic\uncompressed\ScrollMagic.js
+  //= include scrollmagic\uncompressed\plugins\animation.gsap.js
+  //= include scrollmagic\uncompressed\plugins\debug.addIndicators.js
+}

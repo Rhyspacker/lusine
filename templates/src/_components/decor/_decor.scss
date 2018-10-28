@@ -1,0 +1,29 @@
+// ====================
+// Decor
+// ========================================
+
+.decor {
+  display: block;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: 1600px;
+  background: url(../img/decor/decor-mobile.jpg) no-repeat;
+  background-position: -200px top;
+  background-size: auto;
+  opacity: 0.95;
+  z-index: $zindex-decor;
+
+  @include mq($from: mobileLandscape) {
+    background-position: 0px top;
+  }
+
+  @include mq($from: desktop) {
+    top: 160px;
+    height: 2200px;
+    background: url(../img/decor/decor-desktop.jpg) no-repeat;
+    background-position: left top;
+    background-size: cover;
+  }
+}

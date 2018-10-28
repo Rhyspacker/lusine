@@ -5,7 +5,20 @@
 @if $enable-grid-classes {
   .container {
     @include make-container();
-    @include make-container-max-widths();
+
+    max-width: 480px;
+
+    @include mq($from: tablet) {
+      max-width: 720px;
+    }
+
+    @include mq($from: desktop) {
+      max-width: 1024px;
+    }
+
+    @include mq($from: wide) {
+      max-width: 1280px;
+    }
   }
 }
 

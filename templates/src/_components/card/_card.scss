@@ -1,25 +1,50 @@
 // ==============================
-// card deck
+// card deck & filters
 // ========================================
 
 .card-deck {
   &__filters {
     @include list-unstyled;
 
+    li {
+      margin-bottom: $spacer-y/2;
+      &:focus {
+        outline: none !important;
+        -moz-outline-style: none;
+      }
+    }
+
+    @include mq($from: tablet, $until: desktop) {
+      max-width: 400px;
+      margin: 0 auto;
+      li {
+        margin-bottom: $spacer-y*2;
+      }
+    }
+
     @include mq($from: tablet) {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       flex-wrap: wrap;
+      text-align: center;
+
+      li {
+        flex: 1 0 auto;
+
+        .card-deck__filter {
+          border: none;
+          //border: 3px solid transparent;
+          &.is--active {
+            //border: 3px solid white;
+          }
+        }
+      }
     }
 
     li {
       position: relative;
-      margin-right: 10px;
     }
 
-    li:not(:last-child) {
-      margin-bottom: 10px;
-    }
     li:last-child {
       @include mq($from: tablet) {
         margin-right: 0px;
@@ -30,6 +55,7 @@
   &__filter {
     @include mq($until: tablet) {
       border: none;
+
       &:before {
         content: '';
         position: absolute;
@@ -59,7 +85,6 @@
       &.is--active {
         &:after {
           background: white;
-
         }
       }
     }
@@ -67,10 +92,10 @@
       &:after {
         content: '';
         position: absolute;
-        bottom: -22px;
+        bottom: -6px;
         left: 50%;
         transform: translateX(-50%);
-        background: white;
+        background: $color-white;
         width: 0px;
         height: 3px;
         opacity: 0;
@@ -84,10 +109,15 @@
       }
       &:active, &:focus {
         outline: none;
+        border: none;
+      }
+      &:active:focus {
+        outline: none;
       }
       &:hover:not(.is--active) {
         &:after {
           width: 10px;
+          background: $color-grey !important;
           opacity: 1;
         }
       }
@@ -102,10 +132,7 @@
 
 .card {
   position: relative;
-
-  //@include mq($until: tablet) {
-    margin-bottom: $card-margin-bottom;
-  //}
+  margin-bottom: $card-margin-bottom;
 }
 
 // ==============================
@@ -124,7 +151,6 @@
 
 .card__media {
   overflow: hidden;
-  position: relative;
 
   img {
     @include img-fluid;
@@ -180,10 +206,15 @@
 .card__title {
   margin-bottom: $spacer-y/4;
   font-family: $font-family-base;
+  font-size: $card-title-font-size;
+
+  @include mq($from: desktop) {
+    font-size: $card-title-font-size-lg;
+  }
 
   a {
     text-decoration: none;
-    word-wrap: break-word;
+    word-wrap: normal;
     color: inherit;
 
     &:after {
@@ -223,7 +254,12 @@
 // ========================================
 
 .card__date {
+  font-size: $card-date-font-size;
   margin-bottom: $spacer-y*0.8;
+
+  @include mq ($from: desktop) {
+    font-size: $card-date-font-size-lg;
+  }
 }
 
 // ==============================
@@ -232,6 +268,11 @@
 
 .card__text {
   margin-bottom: $spacer-y*1.5;
+
+  a {
+    position: relative;
+    z-index: 80000;
+  }
 }
 
 // ==============================
@@ -252,8 +293,19 @@
   font-size: 0; // Removes whitespace around icons
 }
 
+// ==============================
+// card__modifiers
+// ========================================
+
+
+// External Links
+//
 .card--external-link {
   position: relative;
+
+  .card__body {
+    padding-bottom: $spacer-y*2;
+  }
   &:after {
     content: '';
     position: absolute;
@@ -263,4 +315,11 @@
     height: 22px;
     background: svg-url('<svg height="22" width="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 1024"><path d="M640 768H128V257.9l128-1.9V128H0v768h768V576H640v192zM384 128l128 128-192 192 128 128 192-192 128 128V128H384z" fill="#{$color-black}"/></svg>');
   }
+}
+
+// Video modal
+//
+
+.card--video {
+
 }

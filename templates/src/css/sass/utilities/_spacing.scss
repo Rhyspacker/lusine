@@ -34,7 +34,7 @@
 
 .mt-2-tablet-down { @include mq($until: tablet) { margin-top: ($spacer-y * 2) !important; } }
 
-.mt-8-tablet-up { @include mq($from: tablet) { margin-top: ($spacer-y * 8) !important; } }
+.mt-10-tablet-up { @include mq($from: tablet) { margin-top: ($spacer-y * 10) !important; } }
 
 // ==============================
 // margin-left

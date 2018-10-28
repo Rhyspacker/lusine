@@ -18,8 +18,8 @@ app.header = {
 
     if (header !== null) {
       self.handleNav(header);
+      self.handleResize(header);
     }
-
   },
 
 
@@ -32,16 +32,33 @@ app.header = {
       if (self.isActive == false) {
         header.classList.add(app.globals.states.active);
         trigger.classList.add(app.globals.states.active);
+        app.globals.body.classList.add(app.globals.states.noScroll);
         self.isActive = true;
       }
       else if (self.isActive == true) {
         header.classList.remove(app.globals.states.active);
         trigger.classList.remove(app.globals.states.active);
+        app.globals.body.classList.remove(app.globals.states.noScroll);
         self.isActive = false;
       }
     })
+  },
 
-    console.log(trigger);
+  handleResize: function(header) {
+    var self = this;
+
+    var trigger = document.querySelector(self.config.trigger);
+
+    window.addEventListener("resize", throttle(function() {
+      var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+      if (windowWidth >= app.globals.breakpoints.desktop) {
+        header.classList.remove(app.globals.states.active);
+        trigger.classList.remove(app.globals.states.active);
+        app.globals.body.classList.remove(app.globals.states.noScroll);
+        self.isActive = false;
+      }
+    }, 500));
   },
 
 

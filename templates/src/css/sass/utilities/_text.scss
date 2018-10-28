@@ -44,6 +44,7 @@
 .text--right-wide-up { @include mq($from: wide) { text-align: right !important; } }
 
 .text--center-tablet-down { @include mq($until: tablet) { text-align: center !important; } }
+.text--center-wide-down { @include mq($until: wide) { text-align: center !important; } }
 
 // ====================
 // transformation

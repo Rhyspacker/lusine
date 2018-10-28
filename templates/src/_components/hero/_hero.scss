@@ -5,8 +5,9 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: auto;
   padding: 60px 20px 20px 20px;
+  z-index: $zindex-hero;
   @include mq($from: tablet) {
     height: calc(100% - 60px);
   }
@@ -30,6 +31,11 @@
     width: 100%;
     max-width: 300px;
     margin: $spacer-y*1.2 auto $spacer-y*2 auto;
+
+    @include mq($until: tablet) {
+      position: relative;
+      left: -6px;
+    }
 
     @include mq($from: tablet) {
       margin: 0 $spacer-y auto auto;

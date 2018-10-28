@@ -36,7 +36,7 @@ app.isotope = {
     // });
 
     var $grid = $(".card-deck__items").isotope({
-      itemSelector: '.col-sm-6',
+      itemSelector: '.col-md-6',
       filter: '.solo-work'
     });
 

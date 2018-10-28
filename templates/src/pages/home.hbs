@@ -6,7 +6,6 @@ meta_url: home
 home: true
 ---
 
-
 <div class="container">
 
   <div class="section mt-4">
@@ -17,23 +16,40 @@ home: true
           <img src="img/content/home-video-mobile.jpg" alt="">
         </picture>
       </div>
-      <button class="video-modal__trigger" data-iframe="https://www.youtube.com/embed/10Jg_25ytU0?rel=0">
-        {{> icon--play }}
-      </button>
+      <div class="modal__trigger__outer">
+        <button class="modal__trigger" data-iframe="https://www.youtube.com/embed/10Jg_25ytU0?autoplay=1&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&color=white">
+          {{> icon--play }}
+        </button>
+      </div>
     </div>
   </div>
 
-  <section class="section mt-8-tablet-up mw-750">
-    <div class="section__header text--center-tablet-down">
-      <h2 class="h2 text--uppercase">About</h2>
-      <span class="divider divider--sm divider--center-tablet-down" aria-hidden="true"></span>
-      <img src="img/content/jeff-mcilwain.jpg" class="img-fluid pt-2">
+  <section class="section mw-950 mt-10-tablet-up ">
+    <div class="section__header text--center">
+      <h2 class="h2 text--uppercase">Live dates</h2>
+      <span class="divider divider--sm divider--center" aria-hidden="true"></span>
     </div>
     <div class="section__block">
-      <p class="lead">Jeff McIlwain has been producing his diverse, melodic strain of abstract electronic music as Lusine for a decade and a half.</p>
-      <p>Originally a Texas native, McIlwain moved to the West Coast in the late '90s to study electronic music and sound design at CalArts. It was during this time in L.A. that he would meet Shad T. Scott, who subsequently put out Lusine's self-titled debut on his Isophlux imprint. McIlwain relocated to his current home of Seattle in late 2002 and began steadily releasing his music on Ghostly International. He has also contributed tracks to various compilations and remix releases from Mute, !K7, Kompakt, Asthmatic Kitty, and Shitkatapult.</p>
-      <p>As Lusine, McIlwain has performed throughout the US and abroad, including sets at London's esteemed Fabric nightclub (RIP), Tokyo's Unit, Berlin's Watergate, and Melbourne's Electric Owl. Recent tour dates include appearances with electronic luminaries like Tipper and Blockhead, as well as playing at 2016's Further Future festival with a live drummer (Trent Moorman).</p>
-      <p>In addition to his Lusine productions, McIlwain has been involved with various film projects that include The Sitter (Jonah Hill, 2011) and two David Gordon Green movies, Snow Angels (featuring Kate Beckinsale and Sam Rockwell, 2007) and Joe (Nicolas Cage, Tye Sheridan, 2013) with music writing partner David Wingo. McIlwain is also currently collaborating with Wingo on the film score for Meredith Danluck's upcoming State Like Sleep. Following Lusine's acclaimed The Waiting Room from 2013 and 2014's Arterial EP (which was accompanied by a groundbreaking video from Christophe Thockler), comes the new full-length, Sensorimotor, set for release in early 2017 on Ghostly International.</p>
+      <div class="live-dates">
+        <div class="live-dates__row">
+          <div class="live-dates__date">Sept 8, 2018</div>
+          <div class="live-dates__info">Mesa por Vida, Santa Fe, NM</div>
+          <div class="live-dates__btn"><a href="/" class="btn btn--light btn--sm">Buy tickets</a></div>
+        </div>
+        <div class="live-dates__row">
+          <div class="live-dates__date">Sept 14, 2018</div>
+          <div class="live-dates__info">Strategic Reserve, Oakland, CA</div>
+          <div class="live-dates__btn"><a href="/" class="btn btn--light btn--sm">Buy tickets</a></div>
+        </div>
+        <div class="live-dates__row">
+          <div class="live-dates__date">Nov 10, 2018</div>
+          <div class="live-dates__info">Cervantes Masterpiece Ballroom, Denver, CO</div>
+          <div class="live-dates__btn"><a href="/" class="btn btn--light btn--sm">Buy tickets</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="section__footer text--center mt-2-tablet-down">
+      <a href="./live-dates.html" class="btn btn--light">See more</a>
     </div>
   </section>
 
@@ -74,38 +90,21 @@ home: true
       </div>
     </div>
     <div class="section__footer text--center">
-      <a href="work.html" class="btn btn--light">See more</a>
+      <a href="./work.html" class="btn btn--light">See more</a>
     </div>
   </section>
 
-  <section class="section mw-950">
-    <div class="section__header text--center">
-      <h2 class="h2 text--uppercase">Live dates</h2>
-      <span class="divider divider--sm divider--center" aria-hidden="true"></span>
+  <section class="section section--about mw-750">
+    <div class="section__header text--center-wide-down">
+      <h2 class="h2 text--uppercase">About</h2>
+      <span class="divider divider--sm divider--center-wide-down" aria-hidden="true"></span>
     </div>
     <div class="section__block">
-      <table class="table">
-        <tbody>
-          <tr class="table__row">
-            <td class="lead">Sept 8</td>
-            <td class="text--uppercase">Mesa por Vida, Santa Fe, NM</td>
-            <td class=""><a href="/" class="btn btn--light btn--sm">Buy tickets</a></td>
-          </tr>
-          <tr class="table__row">
-            <td class="lead">Sept 14</td>
-            <td class="text--uppercase">Strategic Reserve, Oakland, CA</td>
-            <td class=""><a href="/" class="btn btn--light btn--sm">Buy tickets</a></td>
-          </tr>
-          <tr class="table__row">
-            <td class="lead">Nov 10</td>
-            <td class="text--uppercase">Cervantes Masterpiece Ballroom, Denver, CO</td>
-            <td class=""><a href="/" class="btn btn--light btn--sm">Buy tickets</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="section__footer text--center">
-      <a href="live-dates.html" class="btn btn--light">See more</a>
+      <p class="lead">Jeff McIlwain has been producing his diverse, melodic strain of abstract electronic music as Lusine for a decade and a half.</p>
+      <img src="img/content/jeff-mcilwain.jpg" class="img-fluid">
+      <p>Originally a Texas native, McIlwain moved to the West Coast in the late '90s to study electronic music and sound design at CalArts. It was during this time in L.A. that he would meet Shad T. Scott, who subsequently put out Lusine's self-titled debut on his Isophlux imprint. McIlwain relocated to his current home of Seattle in late 2002 and began steadily releasing his music on Ghostly International. He has also contributed tracks to various compilations and remix releases from Mute, !K7, Kompakt, Asthmatic Kitty, and Shitkatapult.</p>
+      <p>As Lusine, McIlwain has performed throughout the US and abroad, including sets at London's esteemed Fabric nightclub (RIP), Tokyo's Unit, Berlin's Watergate, and Melbourne's Electric Owl. Recent tour dates include appearances with electronic luminaries like Tipper and Blockhead, as well as playing at 2016's Further Future festival with a live drummer (Trent Moorman).</p>
+      <p>In addition to his Lusine productions, McIlwain has been involved with various film projects that include The Sitter (Jonah Hill, 2011) and two David Gordon Green movies, Snow Angels (featuring Kate Beckinsale and Sam Rockwell, 2007) and Joe (Nicolas Cage, Tye Sheridan, 2013) with music writing partner David Wingo. McIlwain is also currently collaborating with Wingo on the film score for Meredith Danluck's upcoming State Like Sleep. Following Lusine's acclaimed The Waiting Room from 2013 and 2014's Arterial EP (which was accompanied by a groundbreaking video from Christophe Thockler), comes the new full-length, Sensorimotor, set for release in early 2017 on Ghostly International.</p>
     </div>
   </section>
 

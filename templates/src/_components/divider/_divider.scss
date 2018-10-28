@@ -34,3 +34,9 @@
     margin: 0 auto;
   }
 }
+
+@include mq($until: wide) {
+  .divider--center-wide-down {
+    margin: 0 auto;
+  }
+}

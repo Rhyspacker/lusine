@@ -11,7 +11,7 @@
 
 <div class="post" id="<?php echo $post->ID ?>">
 	<h2 class="h2 post__title"><?php the_title(); ?></h2>
-	<p class="small post__subtitle"><?php the_time('jS F Y') ?></p>
+	<p class="small post__subtitle"><?php the_field("press_item_author") ?></p>
 	<p class="post__body">
 		<?php
 		the_content( sprintf(
@@ -28,4 +28,5 @@
 		) );
 		?>
 	</p>
+	<?php if (get_field("press_item_link")) :?><a href="<?php the_field("press_item_link") ?>" class="btn btn--light btn--external">Read More</a><?php endif ?>
 </div>

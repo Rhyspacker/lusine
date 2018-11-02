@@ -193,7 +193,7 @@ function get_iframe_src( $input ) {
 	$return = $output[1];
 
 	return $return;
-	}
+}
 
 /*
 // ========================================= //
@@ -230,7 +230,7 @@ function news_post_type() {
 			'custom-fields',
 			'editor'
 		),
-		'menu_position' => 3,
+		'menu_position' => 4,
 		'exclude_from_search' => true,
 	);
 
@@ -238,6 +238,24 @@ function news_post_type() {
 }
 add_action( 'init', 'news_post_type');
 
+// redirect single posts to the archive page, scrolled to current ID
+add_action( 'template_redirect', function() {
+  if ( is_singular('news') ) {
+    global $post;
+    $redirectLink = get_post_type_archive_link( 'news' )."#".$post->ID;
+    wp_redirect( $redirectLink, 302 );
+    exit;
+  }
+});
+
+// turn off pagination for the archive page
+add_action('parse_query', function($query) {
+  if (is_post_type_archive('news')) {
+    $query->set('nopaging', 1);
+  }
+});
+
+///////////////////////////////////////////////////////////////////////////////
 
 function work_post_type() {
 	$labels = array(
@@ -267,7 +285,7 @@ function work_post_type() {
 			'title',
 			'custom-fields',
 		),
-		'menu_position' => 4,
+		'menu_position' => 5,
 		'exclude_from_search' => true,
 	);
 
@@ -275,6 +293,160 @@ function work_post_type() {
 }
 add_action( 'init', 'work_post_type');
 
+// redirect single posts to the archive page, scrolled to current ID
+add_action( 'template_redirect', function() {
+  if ( is_singular('work') ) {
+    global $post;
+    $redirectLink = get_post_type_archive_link( 'work' )."#".$post->ID;
+    wp_redirect( $redirectLink, 302 );
+    exit;
+  }
+});
+
+// turn off pagination for the archive page
+add_action('parse_query', function($query) {
+  if (is_post_type_archive('work')) {
+    $query->set('nopaging', 1);
+  }
+});
+
+///////////////////////////////////////////////////////////////////////////////
+
+function live_dates_post_type() {
+	$labels = array(
+		'name' => 'Live Dates',
+		'singular_name' => 'Live Dates',
+		'add_new' => 'Add Live Date',
+		'all_items' => 'All Live Dates',
+		'add_new_item' => 'Add Live Date',
+		'edit_item' => 'Edit Live Date',
+		'new_item' => 'New Live Date',
+		'view_item' => 'View Live Date',
+		'search_item' => 'Search Live Dates',
+		'not_found' => 'No Live Dates found',
+		'not_found_in_trash' => 'No Live Dates found in trash',
+		'parent_item_colon' => 'Parent Item'
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'has_archive' => true,
+		'publicly_queryable' => true,
+		'query_var' => true,
+		'rewrite' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'supports' => array(
+			'title',
+			'custom-fields',
+		),
+		'menu_position' => 6,
+		'exclude_from_search' => true,
+	);
+
+	register_post_type('live-dates', $args);
+}
+add_action( 'init', 'live_dates_post_type');
+
+// redirect single posts to the archive page, scrolled to current ID
+add_action( 'template_redirect', function() {
+  if ( is_singular('live-dates') ) {
+    global $post;
+    $redirectLink = get_post_type_archive_link( 'live-dates' )."#".$post->ID;
+    wp_redirect( $redirectLink, 302 );
+    exit;
+  }
+});
+
+// turn off pagination for the archive page
+add_action('parse_query', function($query) {
+  if (is_post_type_archive('live-dates')) {
+    $query->set('nopaging', 1);
+  }
+});
+
+///////////////////////////////////////////////////////////////////////////////
+
+function press_post_type() {
+	$labels = array(
+		'name' => 'Press',
+		'singular_name' => 'Press',
+		'add_new' => 'Add Press Item',
+		'all_items' => 'All Items',
+		'add_new_item' => 'Add Press Item',
+		'edit_item' => 'Edit Press Item',
+		'new_item' => 'New Press Item',
+		'view_item' => 'View Press Item',
+		'search_item' => 'Search Press',
+		'not_found' => 'No items found',
+		'not_found_in_trash' => 'No items found in trash',
+		'parent_item_colon' => 'Parent Item'
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'has_archive' => true,
+		'publicly_queryable' => true,
+		'query_var' => true,
+		'rewrite' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'supports' => array(
+			'title',
+			'custom-fields',
+			'editor'
+		),
+		'menu_position' => 7,
+		'exclude_from_search' => true,
+	);
+
+	register_post_type('press', $args);
+}
+add_action( 'init', 'press_post_type');
+
+// redirect single posts to the archive page, scrolled to current ID
+add_action( 'template_redirect', function() {
+  if ( is_singular('press') ) {
+    global $post;
+    $redirectLink = get_post_type_archive_link( 'press' )."#".$post->ID;
+    wp_redirect( $redirectLink, 302 );
+    exit;
+  }
+});
+
+// turn off pagination for the archive page
+add_action('parse_query', function($query) {
+  if (is_post_type_archive('press')) {
+    $query->set('nopaging', 1);
+  }
+});
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Remove Posts from admin menu
+
+function post_remove ()      //creating functions post_remove for removing menu item
+{
+   remove_menu_page('edit.php');
+}
+
+add_action('admin_menu', 'post_remove');   //adding action for triggering function call
+
+add_action( 'admin_bar_menu', 'remove_wp_nodes', 999 );
+
+function remove_wp_nodes()
+{
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_node( 'new-post' );
+    $wp_admin_bar->remove_node( 'new-link' );
+    $wp_admin_bar->remove_node( 'new-media' );
+}
+
+/*
+// ========================================= //
+	Taxonomies
+// ========================================= //
+*/
 
 function create_my_taxonomies() {
     register_taxonomy(

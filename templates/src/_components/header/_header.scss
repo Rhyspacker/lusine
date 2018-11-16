@@ -35,6 +35,8 @@
 // ========================================
 
 .header__logo {
+  position: relative;
+  left: 6px;
   flex: 0 0 auto;
   width: auto;
 
@@ -84,8 +86,6 @@
       opacity: 0;
       transition: all .5s cubic-bezier(.27,.16,.36,.99);
 
-
-
       @media screen and (max-height: 320px) {
         flex: 0 0 30px;
       }
@@ -99,7 +99,7 @@
       }
 
       @include mq($from: tablet) {
-        flex: 0 0 60px;
+        flex: 0 0 48px;
       }
 
       .is--active & {
@@ -154,19 +154,25 @@
     width: 100%;
     height: auto;
     position: fixed;
-    bottom: 20px;
+    bottom: 12px;
     left: 0;
     opacity: 0;
     transition: opacity 0.3s, left 0.3s;
+    pointer-events: none;
 
     .is--active & {
       transition: opacity 0.3s;
       opacity: 1;
+      pointer-events: auto;
     }
   }
 
   @media screen and (max-height: 440px) {
     display: none;
+  }
+
+  @media screen and (min-height: 625px) {
+    bottom: 25px;
   }
 }
 
@@ -190,10 +196,6 @@
 
   @include mq($from: desktop) {
     display: none;
-  }
-
-  &.is--active {
-
   }
 
   span {

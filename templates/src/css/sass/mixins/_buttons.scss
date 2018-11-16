@@ -8,17 +8,19 @@
 // ========================================
 
 @mixin button-variant($color, $background, $border) {
-  $active-background: darken($background, 10%);
-  $active-border: darken($border, 12%);
+  $active-background: darken($background, 30%);
+  $active-border: darken($border, 30%);
+  $active-color: darken($color, 30%);
 
   background-color: $background;
   border-color: $border;
   color: $color;
+  transition: all 0.3s;
 
   @include hover {
     background-color: $active-background;
     border-color: $active-border;
-    color: $color;
+    color: $active-color;
   }
 
   &:focus {
@@ -86,10 +88,16 @@
 
 // Button sizes
 @mixin button-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
-  font-size: $font-size;
-  line-height: $line-height;
-  padding: $padding-y $padding-x;
+  font-size: $font-size*0.8;
+  line-height: $line-height*0.8;
+  padding: $padding-y/2 $padding-x/2;
   @include border-radius($border-radius);
+
+  @include mq($from: desktop) {
+    font-size: $font-size;
+    line-height: $line-height;
+    padding: $padding-y $padding-x;
+  }
 }
 
 // SVG Button mixin

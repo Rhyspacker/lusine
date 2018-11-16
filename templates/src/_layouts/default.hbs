@@ -2,7 +2,7 @@
 <html class="no-js" lang="en-GB">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <meta name="HandheldFriendly" content="True">
     <title>{{{ title }}} | {{capitalize project.shortname }}</title>
@@ -31,17 +31,32 @@
     <link rel="shortcut icon" href="/img/icons/favicon.ico">
     <meta name="msapplication-config" content="/img/icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    <link href="/css/{{ project.shortname }}.main.css" rel="stylesheet">
-    <script src="/js/{{ project.shortname }}.main.js" async></script>
+    <link href="css/{{ project.shortname }}.main.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    {{#if home}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    {{/if}}
+    <script src="js/{{ project.shortname }}.main.js" async></script>
   </head>
   <body{{#if body_classes}} class="{{ body_classes }}"{{/if}}>
 
     {{> header}}
+
+    {{! Hero }}
+    {{#if home}}{{> hero }}{{/if}}
+
+    {{! Decor }}
+    {{#if home}}<span class="decor decor--main" aria-hidden="true"></span>{{/if}}
+
+    {{! Intro (will have cookie set for one occurance )}}
+    {{#if home}}{{> intro }}{{/if}}
 
     <div class="page{{#if page_classes}} {{ page_classes }}{{/if}}">
       {% body %}
     </div>
 
     {{> footer }}
+
   </body>
 </html>

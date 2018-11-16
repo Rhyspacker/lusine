@@ -16,40 +16,38 @@ input, textarea, select {
 // fonts
 // ========================================
 
-@import url('https://fonts.googleapis.com/css?family=Lato|Spectral:500');
+@font-face {
+  font-family: 'Lato';
+  font-weight: normal;
+  font-style: normal;
+  src: url('files/fonts/lato/lato.eot'); /* IE9 Compat Modes */
+  src: url('files/fonts/lato/lato.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('files/fonts/lato/lato.woff2') format('woff2'), /* Super Modern Browsers */
+       url('files/fonts/lato/lato.woff') format('woff'), /* Pretty Modern Browsers */
+       url('files/fonts/lato/lato.ttf') format('truetype');
+}
 
-// @font-face {
-//   font-family: 'font-name';
-//   font-weight: normal;
-//   font-style: normal;
-//   src: url('/files/fonts/font-name/font-name.eot'); /* IE9 Compat Modes */
-//   src: url('/files/fonts/font-name/font-name.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-//        url('/files/fonts/font-name/font-name.woff2') format('woff2'), /* Super Modern Browsers */
-//        url('/files/fonts/font-name/font-name.woff') format('woff'), /* Pretty Modern Browsers */
-//        url('/files/fonts/font-name/font-name.ttf') format('truetype');
-// }
+@font-face {
+  font-family: 'Lato';
+  font-weight: bold;
+  font-style: normal;
+  src: url('files/fonts/lato/lato-bold.eot'); /* IE9 Compat Modes */
+  src: url('files/fonts/lato/lato-bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('files/fonts/lato/lato-bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('files/fonts/lato/lato-bold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('files/fonts/lato/lato-bold.ttf') format('truetype');
+}
 
-// @font-face {
-//   font-family: 'font-name';
-//   font-weight: bold;
-//   font-style: normal;
-//   src: url('/files/fonts/font-name/font-name.eot'); /* IE9 Compat Modes */
-//   src: url('/files/fonts/font-name/font-name.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-//        url('/files/fonts/font-name/font-name.woff2') format('woff2'), /* Super Modern Browsers */
-//        url('/files/fonts/font-name/font-name.woff') format('woff'), /* Pretty Modern Browsers */
-//        url('/files/fonts/font-name/font-name.ttf') format('truetype');
-// }
-
-// @font-face {
-//   font-family: 'font-name';
-//   font-weight: light;
-//   font-style: normal;
-//   src: url('/files/fonts/font-name/font-name.eot'); /* IE9 Compat Modes */
-//   src: url('/files/fonts/font-name/font-name.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-//        url('/files/fonts/font-name/font-name.woff2') format('woff2'), /* Super Modern Browsers */
-//        url('/files/fonts/font-name/font-name.woff') format('woff'), /* Pretty Modern Browsers */
-//        url('/files/fonts/font-name/font-name.ttf') format('truetype');
-// }
+@font-face {
+  font-family: 'Spectral';
+  font-weight: 600;
+  font-style: normal;
+  src: url('files/fonts/spectral/spectral.eot'); /* IE9 Compat Modes */
+  src: url('files/fonts/spectral/spectral.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('files/fonts/spectral/spectral.woff2') format('woff2'), /* Super Modern Browsers */
+       url('files/fonts/spectral/spectral.woff') format('woff'), /* Pretty Modern Browsers */
+       url('files/fonts/spectral/spectral.ttf') format('truetype');
+}
 
 // ====================
 // Headings
@@ -232,6 +230,7 @@ h6 {
   font-weight: $display1-font-weight;
   line-height: $display1-line-height;
   text-transform: uppercase;
+  color: inherit;
 
   @include mq($from: tablet) {
     font-size: $display1-font-size-tablet;
@@ -276,6 +275,23 @@ h6 {
   font-size: $lead-font-size;
   font-weight: $lead-font-weight;
   line-height: $lead-line-height;
+}
+
+.small {
+  font-size: $small-font-size;
+  font-weight: $small-font-weight;
+  line-height: $small-line-height;
+}
+
+// ====================
+// links
+// ========================================
+
+a {
+  transition: color 0.3s;
+  &:hover {
+    color: darken($color-white, 30%);
+  }
 }
 
 // ====================

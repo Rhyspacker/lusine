@@ -1,0 +1,64 @@
+// ==============================
+// Live dates
+// ========================================
+
+.live-dates {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.live-dates__row {
+  position: relative;
+  padding: $spacer-y/2 0;
+
+  @include mq($from: tablet) {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  &:not(:last-child) {
+    border-bottom: 1px solid $color-white;
+  }
+
+  .live-dates__date {
+    height: 100%;
+    width: 100%;
+    padding: $spacer-y/2 0;
+    flex: 0 0 auto;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    @include mq($from: desktop) {
+      width: 200px;
+    }
+  }
+
+  .live-dates__info {
+    height: 100%;
+    width: 100%;
+    max-width: 575px;
+    padding: $spacer-y/2 0;
+    flex: 1;
+
+    @include mq($from: tablet) {
+      flex: 0 0 auto;
+      width: auto;
+    }
+  }
+
+  .live-dates__btn {
+    height: 100%;
+    width: 100%;
+    padding: $spacer-y/2 0;
+    flex: 1;
+    text-align: left;
+
+    @include mq($from: tablet) {
+      text-align: right;
+    }
+  }
+}

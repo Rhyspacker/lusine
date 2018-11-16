@@ -6,8 +6,8 @@
 // Variables and mixins
 // ========================================
 
-@import "variables";
 @import "mixins";
+@import "variables";
 
 // ====================
 // Print
@@ -21,6 +21,8 @@
 
 @import "reboot";
 @import "typography";
+@import "functions";
+@import "grid";
 @import "layout";
 @import "styles";
 @import "vendor";

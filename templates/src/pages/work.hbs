@@ -1,0 +1,49 @@
+---
+title: "Work"
+body_classes:
+layout: default
+meta_url: work
+---
+
+<div class="container">
+
+  {{> page-header page-header__title="Work"}}
+
+  <section class="section">
+    <div class="section__block">
+      {{! START: Tabs }}
+
+      <ul class="card-deck__filters">
+        <li>
+          <button href="#" class="card-deck__filter btn btn--light is--active" data-filter=".solo-work">Solo work</button>
+        </li>
+        <li>
+          <button href="#" class="card-deck__filter btn btn--light" data-filter=".remix">Remixes</button>
+        </li>
+        <li>
+          <button href="#" class="card-deck__filter btn btn--light" data-filter=".music-video">Music Videos</button>
+        </li>
+        <li>
+          <button href="#" class="card-deck__filter btn btn--light" data-filter=".film">Films</button>
+        </li>
+        <li>
+          <button href="#" class="card-deck__filter btn btn--light" data-filter=".game">Games</button>
+        </li>
+        <li>
+          <button href="#" class="card-deck__filter btn btn--light" data-filter=".ad">Ads</button>
+        </li>
+        <li>
+          <button href="#" class="card-deck__filter btn btn--light" data-filter=".music-placement">Music Placements</button>
+        </li>
+      </ul>
+      <div class="card-deck">
+        <div class="card-deck__items pt-4 is--active" id="tab-1">
+          {{> card-deck }}
+        </div>
+      </div>
+      {{! END: Tabs }}
+    </div>
+
+  </section>
+
+</div>

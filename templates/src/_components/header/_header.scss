@@ -13,6 +13,7 @@
   height: 60px;
   background: black;
   padding: $spacer/2;
+  z-index: 70000;
 }
 
 // ==============================
@@ -22,8 +23,10 @@
 .header__wpr {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  max-width: 1250px;
+  margin: 0 auto;
 }
 
 
@@ -32,8 +35,10 @@
 // ========================================
 
 .header__logo {
-  flex: 1 1 auto;
-  width: 150px;
+  position: relative;
+  left: 6px;
+  flex: 0 0 auto;
+  width: auto;
 
   .display-1 {
     margin-bottom: 0;
@@ -47,7 +52,7 @@
 
 .header__nav {
   @include list-unstyled;
-  width: calc(100vw - 115px);
+  width: 100%;
   height: calc(100% - 60px);
   position: fixed;
   top: 60px;
@@ -57,37 +62,59 @@
   text-align: right;
   vertical-align: middle;
   background: $color-black;
-  opacity: 0;
-  transition: right 0.3s, opacity 0.3s;
-
-  .is--active & {
-    right: 0;
-    opacity: 1;
-  }
 
   @include mq($until: desktop) {
-    &:before {
-      content: '';
-      display: block;
-      width: 115px;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translateX(-100%);
-      background: blue;
-    }
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: left;
+    text-align: center;
+
+    opacity: 0;
+    transition: right 0.3s, opacity 0.3s;
+
+    .is--active & {
+      right: 0;
+      opacity: 1;
+    }
 
     &__li {
-      flex: 0 0 60px;
+      position: relative;
+      bottom: -12px;
       width: 100%;
-      padding-left: $spacer-x*1.5;
+      font-size: 5vh;
+      opacity: 0;
+      transition: all .5s cubic-bezier(.27,.16,.36,.99);
+
+      @media screen and (max-height: 320px) {
+        flex: 0 0 30px;
+      }
+
+      @media screen and (min-height: 320px) {
+        flex: 0 0 40px;
+      }
+
+      @media screen and (min-height: 480px) {
+        flex: 0 0 45px;
+      }
+
+      @include mq($from: tablet) {
+        flex: 0 0 48px;
+      }
+
+      .is--active & {
+        transition: all .3s cubic-bezier(.27,.16,.36,.99);
+        bottom: 0;
+        opacity: 1;
+
+        $list-items: 7;
+        $start-count: 200;
+        @for $i from 1 to $list-items {
+          &:nth-of-type(#{$i}) {
+            transition-delay: #{$start-count + ($i*75)}ms;
+          }
+        }
+      }
     }
   }
 
@@ -97,12 +124,55 @@
     top: auto;
     right: auto;
     background: none;
+
+    li {
+      &:not(:last-child) {
+        margin-right: $spacer-x*2;
+      }
+    }
   }
 
   &__li {
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
     @include mq($from: desktop) {
       display: inline-block;
     }
+  }
+}
+
+.header__social {
+  display: none;
+  @include mq($until: desktop) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 12px;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s, left 0.3s;
+    pointer-events: none;
+
+    .is--active & {
+      transition: opacity 0.3s;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  @media screen and (max-height: 440px) {
+    display: none;
+  }
+
+  @media screen and (min-height: 625px) {
+    bottom: 25px;
   }
 }
 
@@ -115,7 +185,8 @@
   width: 44px;
   height: 44px;
   position: fixed;
-  top: 8px;
+  z-index: 80000;
+  top: 6px;
   right: 8px;
 
   @include button-unstyled;
@@ -127,16 +198,12 @@
     display: none;
   }
 
-  &.is--active {
-
-  }
-
   span {
     position: relative;
     left: 0;
     display: block;
     width: 80%;
-    height: 2px;
+    height: 3px;
     background: $color-white;
     transition: all .3s cubic-bezier(.27,.16,.36,.99);
 
@@ -146,11 +213,13 @@
 
     &:nth-of-type(4) {
       position: absolute;
+      left: 0;
       top: 50%;
       transform: rotate(45deg) translateY(-50%) scale(0);
     }
     &:nth-of-type(5) {
       position: absolute;
+      left: 1px;
       top: 50%;
       transform: rotate(-45deg) translateY(-50%) scale(0);
     }

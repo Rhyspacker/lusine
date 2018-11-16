@@ -19,6 +19,13 @@
 // Components
 // ========================================
 
+
+// ====================
+// Options
+// ========================================
+
+$enable-grid-classes: true !default;
+
 // ====================
 // Colors
 // ========================================
@@ -57,8 +64,8 @@ $color-youtube: #cd201f;
 
 // Body colors
 //
-$body-bg: $color-white;
-$body-color: $color-grey-dark;
+$body-bg: $color-black;
+$body-color: $color-white;
 
 // ====================
 // Options
@@ -76,12 +83,13 @@ $enable-flexbox: true;
 $spacer: 20px;
 $spacer-x: $spacer;
 $spacer-y: $spacer;
+$gutter-width: 20px;
 
 // ====================
 // Borders
 // ========================================
 
-$border-width: 1px;
+$border-width: 3px;
 $border-color: $color-grey;
 
 // ====================
@@ -90,9 +98,15 @@ $border-color: $color-grey;
 
 $link-color: $body-color;
 $link-decoration: underline;
-$link-hover-color: darken($link-color, 15%);
+$link-hover-color: darken($link-color, 30%);
 $link-hover-decoration: none;
 $link-hover-transition-time: 0.15s;
+
+// ====================
+// Section
+// ========================================
+
+$section-spacer-y: 20px;
 
 // ====================
 // Breakpoints
@@ -111,19 +125,41 @@ $mq-breakpoints: (
   wide:    1441px
 );
 
-// ====================
-// Grid: Containers and Gutters
-// ========================================
-
-$gutter-width: 20px;
-
-// Max widths for .container _layout.scss
+// Grid breakpoints
 //
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints);
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
 $container-max-widths: (
-  tablet:  768px,
+  tablet:  664px,
   desktop: 992px,
   wide:    1280px
 );
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:                12 !default;
+$grid-gutter-width:           30px !default;
 
 
 // ====================
@@ -132,12 +168,11 @@ $container-max-widths: (
 
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: 'Lato', sans-serif;
-$font-family-serif: 'Spectral', serif;
-$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-sans-serif: 'Lato', Arial, sans-serif;
+$font-family-serif: 'Spectral', Georgia, serif;
 $font-family-base: $font-family-sans-serif;
 
-$font-size-base: 1rem;
+$font-size-base: 1.25rem;
 $font-size-html: 18px;
 $font-size-html-desktop: 22px;
 
@@ -149,20 +184,20 @@ $font-weight-normal: normal;
 $font-weight-bold: bold;
 
 $font-weight-base: $font-weight-normal;
-$line-height-base: 1.3335; // 24px based on 18px base font
+$line-height-base: 1.375; // 24px based on 18px base font
 $line-height-base-desktop: 1.4545454545; // 32px based on 22px base font
 
-$font-size-h1: 34px;
-$font-size-h1-tablet: 38px;
-$font-size-h1-desktop: 56px;
+$font-size-h1: 28px;
+$font-size-h1-tablet: 32px;
+$font-size-h1-desktop: 40px;
 
 $font-size-h2: 24px;
 $font-size-h2-tablet: 28px;
-$font-size-h2-desktop: 36px;
+$font-size-h2-desktop: 30px;
 
 $font-size-h3: 22px;
-$font-size-h3-tablet: 26px;
-$font-size-h3-desktop: 30px;
+$font-size-h3-tablet: 24px;
+$font-size-h3-desktop: 26px;
 
 $font-size-h4: 18px;
 $font-size-h4-tablet: 22px;
@@ -176,20 +211,20 @@ $font-size-h6: 16px;
 $font-size-h6-tablet: 18px;
 $font-size-h6-desktop: 24px;
 
-$headings-margin-bottom: ($spacer / 2);
+$headings-margin-bottom: ($spacer/2);
 $headings-font-family: $font-family-serif;
-$headings-font-weight: 500;
+$headings-font-weight: 600;
 $headings-line-height: 1.2;
 $headings-color: inherit;
 
 // Display sizing
 //
 $display1-font-family: $font-family-serif;
-$display1-font-size: 24px;
-$display1-font-size-tablet: 24px;
-$display1-font-size-desktop: 28px;
-$display1-font-weight: bold;
-$display1-line-height: 00.8;
+$display1-font-size: 30px;
+$display1-font-size-tablet: 42px;
+$display1-font-size-desktop: 56px;
+$display1-font-weight: normal;
+$display1-line-height: 1.2;
 
 $display2-font-family: $font-family-base;
 $display2-font-size: 16px;
@@ -208,9 +243,16 @@ $display3-line-height: 1;
 
 // Lead
 //
-$lead-font-size: 18px;
-$lead-font-weight: 500;
+$lead-font-size: 22px;
+$lead-font-weight: 700;
 $lead-line-height: 30px;
+
+// Small
+//
+
+$small-font-size: 14px;
+$small-font-weight: bold;
+$small-line-height: inherit;
 
 // Muted
 //
@@ -234,6 +276,11 @@ $list-inline-padding: 5px;
 // ====================
 // Z-index master list
 // ========================================
+
+$zindex-decor: 10000;
+$zindex-hero: 20000;
+$zindex-main: 20000;
+$zindex-footer: 20000;
 
 // ====================
 // Components
@@ -263,8 +310,8 @@ $btn-border-radius: 0px;
 $btn-font-family: $font-family-base;
 $btn-font-size: 18px;
 $btn-font-weight: bold;
-$btn-line-height: 40px;
-$btn-padding-x: 20px;
+$btn-line-height: 30px;
+$btn-padding-x: 18px;
 $btn-padding-y: 5px;
 $btn-block-spacing-y: 8px;
 $input-btn-border-width: $border-width;
@@ -277,6 +324,35 @@ $btn-sm-font-weight: 400;
 $btn-sm-line-height: 28px;
 $btn-sm-padding-x: 14px;
 $btn-sm-padding-y: 0px;
+
+// ====================
+// Card
+// ========================================
+
+$card-bg: $body-color;
+$card-color: $color-black;
+$card-margin-bottom: 32px;
+$card-padding-x: 16px;
+$card-padding-y: 16px;
+$card-padding-x-desktop: 20px;
+$card-padding-y-desktop: 20px;
+
+$card-deck-margin: 30px;
+
+$card-title-font-size: 16px;
+$card-title-font-size-lg: 18px;
+$card-date-font-size: 14px;
+$card-date-font-size-lg: 16px;
+$card-meta-font-size: 21px;
+$card-icons-font-size: 14px;
+
+$card-text-link-color: $link-color;
+$card-text-link-decoration: $link-decoration;
+$card-text-link-hover-color: $link-hover-color;
+$card-text-link-hover-decoration: $link-hover-decoration;
+
+$card-social-text-font-size: 18px;
+
 
 // ====================
 // Forms
@@ -292,3 +368,13 @@ $breadcrumb-padding-y: 4px;
 $breadcrumb-item-padding: 4px;
 $breadcrumb-divider-color: $color-d-primary;
 $breadcrumb-divider: "/";
+
+// ====================
+// Icons
+// ========================================
+
+$icon-sm-dimensions: 40px;
+$icon-sm-dimensions-svg: 26px;
+
+$icon-lg-dimensions: 42px;
+$icon-lg-dimensions-svg: 30px;

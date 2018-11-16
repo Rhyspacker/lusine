@@ -1,0 +1,114 @@
+---
+title: "Grid - Styleguide"
+#body_classes:
+layout: styleguide
+---
+
+<div class="container">
+
+  <ol class="styleguide-breadcrumb">
+    <li class="styleguide-breadcrumb__item"><a href="index.html">Styleguide</a></li>
+    <li class="styleguide-breadcrumb__item active">Cards</li>
+  </ol>
+
+  <h1 class="mb-5">Cards</h1>
+
+  <h2>Card</h2>
+
+  <div class="styleguide-example">
+    <div class="mw-300">
+      {{> card
+        card__classes="card--external-link"
+        card__media__aspect="aspect--1-1"
+        card__img__src="https://cdn.shopify.com/s/files/1/0023/2122/products/GI-287_3000x300_grande_174ddd49-c3c1-4bee-97a8-f570dc9ed523_1200x.jpg"
+        card__img__srcset_md="https://cdn.shopify.com/s/files/1/0023/2122/products/GI-287_3000x300_grande_174ddd49-c3c1-4bee-97a8-f570dc9ed523_1200x.jpg"
+        card__title="Lusine - Sensorimotor LP, Ghostly International :: GI-287"
+        card__title__classes="lead text--uppercase"
+        card__link="https://ghostly.com/products/sensorimotor"
+        card__date="2017"
+      }}
+    </div>
+  </div>
+  <div class="styleguide-example-code hidden">
+<code><pre>
+&#123;&#123;&#62; card
+  card__classes=&#34;card--external&#34;
+  card__media__aspect=&#34;aspect--16-9&#34;
+  card__img__src=&#34;img/temp/temp_16-9_414x232.jpg&#34;
+  card__img__srcset_md=&#34;img/temp/temp_16-9_768x432.jpg&#34;
+  card__title=&#34;Card title&#34;
+  card__title__classes=&#34;h2 text--uppercase&#34;
+  card__link=&#34;#&#34;
+  card__text=&#34;&#60;p&#62;Labore ipsum proident fugiat elit culpa esse ullamco magna dolore commodo pariatur pariatur aute excepteur duis anim commodo.&#60;/p&#62;&#34;
+  card__cta__text=&#34;Call to action&#34;
+&#125;&#125;
+</pre></code>
+  </div>
+
+  <h2>Card for games/film</h2>
+
+  <div class="styleguide-example">
+    <div class="mw-300">
+      {{> card
+        card__classes="card--external-link"
+        card__media__aspect="aspect--1-2"
+        card__img__src="http://lusineweb.com/images/joe-poster.jpg"
+        card__img__srcset_md="http://lusineweb.com/images/joe-poster.jpg"
+        card__title="Joe"
+        card__title__classes="lead text--uppercase"
+        card__link="https://soundcloud.com/jeff-mcilwain/gary-works"
+        card__date="18th August 2018"
+        card__text="Director: David Gordon Green, Studio: Lionsgate/Roadside, <a href='http://www.imdb.com/title/tt2382396/' class='text--dark'>Joe @ Imdb</a>"
+      }}
+    </div>
+  </div>
+  <div class="styleguide-example-code hidden">
+<code><pre>
+&#123;&#123;&#62; card
+  card__classes=&#34;card--external&#34;
+  card__media__aspect=&#34;aspect--16-9&#34;
+  card__img__src=&#34;img/temp/temp_16-9_414x232.jpg&#34;
+  card__img__srcset_md=&#34;img/temp/temp_16-9_768x432.jpg&#34;
+  card__title=&#34;Card title&#34;
+  card__title__classes=&#34;h2 text--uppercase&#34;
+  card__link=&#34;#&#34;
+  card__text=&#34;&#60;p&#62;Labore ipsum proident fugiat elit culpa esse ullamco magna dolore commodo pariatur pariatur aute excepteur duis anim commodo.&#60;/p&#62;&#34;
+  card__cta__text=&#34;Call to action&#34;
+&#125;&#125;
+</pre></code>
+  </div>
+
+  <h2>Card to open video modal</h2>
+
+  <div class="styleguide-example">
+    <div class="mw-300">
+      {{> card
+        card__classes="card--video"
+        card__media__aspect="aspect--1-1"
+        card__img__src="https://cdn.shopify.com/s/files/1/0023/2122/products/GI-217_1500x300_1200x.jpg"
+        card__img__srcset_md="https://cdn.shopify.com/s/files/1/0023/2122/products/GI-217_1500x300_1200x.jpg"
+        card__video="https://player.vimeo.com/video/100957047?autoplay=1&color=ffffff"
+        card__title="Lusine - Arterial"
+        card__title__classes="lead text--uppercase"
+        card__link=false
+        card__date="2014"
+      }}
+    </div>
+  </div>
+  <div class="styleguide-example-code hidden">
+<code><pre>
+&#123;&#123;&#62; card
+  card__classes=&#34;card--video&#34;
+  card__media__aspect=&#34;aspect--1-1&#34;
+  card__img__src=&#34;img/temp/temp_16-9_414x232.jpg&#34;
+  card__img__srcset_md=&#34;img/temp/temp_16-9_768x432.jpg&#34;
+  card__title=&#34;Card title&#34;
+  card__title__classes=&#34;h2 text--uppercase&#34;
+  card__link=&#34;#&#34;
+  card__text=&#34;&#60;p&#62;Labore ipsum proident fugiat elit culpa esse ullamco magna dolore commodo pariatur pariatur aute excepteur duis anim commodo.&#60;/p&#62;&#34;
+  card__cta__text=&#34;Call to action&#34;
+&#125;&#125;
+</pre></code>
+  </div>
+
+</div>

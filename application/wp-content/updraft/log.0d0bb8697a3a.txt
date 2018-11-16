@@ -1,0 +1,158 @@
+0000.008 (0) Opened log file at time: Tue, 06 Nov 2018 01:24:30 +0000 on http://localhost:81/lusine/application
+0000.084 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.15.3 WP: 4.9.8 PHP: 7.1.7 (apache2handler, Windows NT DESKTOP-UF2K06A 10.0 build 17134 (Windows 10) i586) MySQL: 10.1.25-MariaDB WPLANG: en_US Server: Apache/2.4.26 (Win32) OpenSSL/1.0.2l PHP/7.1.7 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 24.8M | 4M) multisite: N openssl: OpenSSL 1.0.2k  26 Jan 2017 mcrypt: Y LANG:  ZipArchive::addFile: Y
+0000.107 (0) Free space on disk containing Updraft's temporary directory: 40152.7 MB
+0000.167 (0) Tasks: Backup files: 1 (schedule: unset) Backup DB: 1 (schedule: unset)
+0000.189 (0) Semaphore (fd, wp_options) being initialised
+0000.239 (0) Requesting semaphore lock (fd) (apparently not via scheduler)
+0000.302 (0) Set semaphore last lock (fd) time to 2018-11-06 01:24:31
+0000.325 (0) Semaphore lock (fd) complete
+0000.399 (0) Backup run: resumption=0, nonce=0d0bb8697a3a, begun at=1541467470 (1s ago), job type=backup
+0000.438 (0) Scheduling a resumption (1) after 300 seconds (1541467771) in case this run gets aborted
+0000.524 (0) Checking if we have a zip executable available
+0000.557 (0) Creation of backups of directories: beginning
+0000.631 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0005.929 (0) Total entities for the zip file: 269 directories, 1759 files (0 skipped as non-modified), 30.9 MB
+0005.962 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0 MB, 1 (1) files added so far); re-opening (prior size: 0 KB)
+0008.226 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (1 MB, 37 (38) files added so far); re-opening (prior size: 53 KB)
+0011.311 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0.5 MB, 24 (62) files added so far); re-opening (prior size: 329.1 KB)
+0013.083 (0) Zip: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-plugins.zip.tmp: 100 files added (on-disk size: 468.2 KB)
+0014.504 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0.7 MB, 100 (162) files added so far); re-opening (prior size: 468.2 KB)
+0017.398 (0) Zip: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-plugins.zip.tmp: 200 files added (on-disk size: 681.5 KB)
+0018.227 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (4.2 MB, 62 (224) files added so far); re-opening (prior size: 681.5 KB)
+0022.694 (0) Zip: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-plugins.zip.tmp: 300 files added (on-disk size: 1861.9 KB)
+0024.606 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (1.1 MB, 118 (342) files added so far); re-opening (prior size: 1861.9 KB)
+0028.259 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0.1 MB, 56 (398) files added so far); re-opening (prior size: 2168.3 KB)
+0028.710 (0) Zip: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-plugins.zip.tmp: 400 files added (on-disk size: 2223.4 KB)
+0029.609 (0) Zip: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-plugins.zip.tmp: 500 files added (on-disk size: 2223.4 KB)
+0030.503 (0) Zip: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-plugins.zip.tmp: 600 files added (on-disk size: 2223.4 KB)
+0031.227 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (4.8 MB, 283 (681) files added so far); re-opening (prior size: 2223.4 KB)
+0033.584 (0) Zip: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-plugins.zip.tmp: 700 files added (on-disk size: 3869.7 KB)
+0034.463 (0) Zip: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-plugins.zip.tmp: 800 files added (on-disk size: 3869.7 KB)
+0035.391 (0) Zip: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-plugins.zip.tmp: 900 files added (on-disk size: 3869.7 KB)
+0036.234 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (14.7 MB, 310 (991) files added so far); re-opening (prior size: 3869.7 KB)
+0044.081 (0) Zip: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-plugins.zip.tmp: 1000 files added (on-disk size: 7842.1 KB)
+0045.019 (0) Zip: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-plugins.zip.tmp: 1100 files added (on-disk size: 7842.1 KB)
+0045.921 (0) Zip: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-plugins.zip.tmp: 1200 files added (on-disk size: 7842.1 KB)
+0046.230 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (1.2 MB, 241 (1232) files added so far); re-opening (prior size: 7842.1 KB)
+0048.567 (0) Zip: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-plugins.zip.tmp: 1300 files added (on-disk size: 8275.2 KB)
+0049.511 (0) Zip: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-plugins.zip.tmp: 1400 files added (on-disk size: 8275.2 KB)
+0050.227 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0.7 MB, 247 (1479) files added so far); re-opening (prior size: 8275.2 KB)
+0051.890 (0) Zip: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-plugins.zip.tmp: 1500 files added (on-disk size: 8546.5 KB)
+0052.793 (0) Zip: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-plugins.zip.tmp: 1600 files added (on-disk size: 8546.5 KB)
+0053.683 (0) Zip: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-plugins.zip.tmp: 1700 files added (on-disk size: 8546.5 KB)
+0057.175 (0) Created plugins zip (0) - 9082.3 KB in 56.5 s (160.8 KB/s) (sha1: 05e0ee9dc94a28000e5e7d44d5575cdb74edb3ed, sha256: d35148bedc6482dea64a7b513a8013cc05d881615be01097f323f567236b7df7)
+0057.213 (0) Beginning creation of dump of themes (split every: 400 MB)
+0057.908 (0) Total entities for the zip file: 39 directories, 229 files (0 skipped as non-modified), 8.6 MB
+0060.231 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (5.6 MB, 59 (59) files added so far); re-opening (prior size: 0 KB)
+0065.253 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0.1 MB, 38 (97) files added so far); re-opening (prior size: 2987.5 KB)
+0065.738 (0) Zip: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-themes.zip.tmp: 100 files added (on-disk size: 3036.9 KB)
+0068.293 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (1.5 MB, 51 (148) files added so far); re-opening (prior size: 3036.9 KB)
+0071.322 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0.5 MB, 35 (183) files added so far); re-opening (prior size: 4261.7 KB)
+0072.686 (0) Zip: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-themes.zip.tmp: 200 files added (on-disk size: 4673.7 KB)
+0074.227 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0.3 MB, 33 (216) files added so far); re-opening (prior size: 4673.7 KB)
+0076.221 (0) Created themes zip (0) - 5279.2 KB in 19 s (278.5 KB/s) (sha1: e470caa95ead61d0210657d7bd860a60ca72a3f0, sha256: 11fb919b6551c35d55fdae8d63f93c563d215bb3adaa2098363c2f84289bbe3b)
+0076.260 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots
+0076.274 (0) Looking for candidates to backup in: C:\xampp\htdocs\lusine\application/wp-content/uploads
+0076.288 (0) finding files: 2018: adding to list (1)
+0076.302 (0) Beginning creation of dump of uploads (split every: 400 MB)
+0077.139 (0) Total entities for the zip file: 3 directories, 274 files (0 skipped as non-modified), 10.8 MB
+0079.098 (0) Zip: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-uploads.zip.tmp: 100 files added (on-disk size: 0 KB)
+0079.516 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (4.9 MB, 101 (101) files added so far); re-opening (prior size: 0 KB)
+0081.353 (0) Zip: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-uploads.zip.tmp: 200 files added (on-disk size: 5042.7 KB)
+0083.871 (0) Created uploads zip (0) - 11130.8 KB in 7.5 s (1487 KB/s) (sha1: a1801311b2a3c61a63b198cc62e4b59c846e1236, sha256: cb37cfa3f715df897beb72c0cc53f48c622f404eb06831d4b7bc2b8d6fd92353)
+0083.908 (0) Beginning backup of other directories found in the content directory (index: 0)
+0083.923 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0083.947 (0) Looking for candidates to backup in: C:\xampp\htdocs\lusine\application/wp-content
+0083.970 (0) finding files: ai1wm-backups: skipping: excluded by options (glob)
+0083.985 (0) finding files: index.php: adding to list (1)
+0083.998 (0) finding files: plugins: skipping: this is the plugins directory
+0084.012 (0) finding files: themes: skipping: this is the themes directory
+0084.025 (0) finding files: updraft: skipping: this is the updraft directory
+0084.039 (0) finding files: upgrade: skipping: excluded by options
+0084.052 (0) finding files: uploads: skipping: this is the uploads directory
+0084.344 (0) Total entities for the zip file: 0 directories, 1 files (0 skipped as non-modified), 0 MB
+0084.529 (0) Created others zip (0) - 0.1 KB in 0.4 s (0.3 KB/s) (sha1: 2aba5a5bc7b40b7cedd9ea2e1ef0a14b5cee7cf5, sha256: 996c34a6b63309734cdc375564f123479f56ab6bd0143a6b65500a4c49c4cea8)
+0084.602 (0) Saving backup status to database (elements: 8)
+0084.630 (0) Beginning creation of database dump (WordPress DB)
+0084.903 (0) Table wp_options: Total expected rows (approximate): 163
+0084.991 (0) Table wp_options: Total rows added: 159 in 0.07 seconds
+0085.027 (0) Table wp_options: finishing file (backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_options.table.gz - 9 KB)
+0085.100 (0) Table wp_users: Total expected rows (approximate): 0
+0085.148 (0) Table wp_users: Total rows added: 1 in 0.03 seconds
+0085.200 (0) Table wp_users: finishing file (backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_users.table.gz - 0.5 KB)
+0085.292 (0) Table wp_usermeta: Total expected rows (approximate): 32
+0085.361 (0) Table wp_usermeta: Total rows added: 33 in 0.06 seconds
+0085.409 (0) Table wp_usermeta: finishing file (backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_usermeta.table.gz - 1.4 KB)
+0085.567 (0) Table wp_commentmeta: Total expected rows (approximate): 0
+0085.620 (0) Table wp_commentmeta: Total rows added: 0 in 0.03 seconds
+0085.660 (0) Table wp_commentmeta: finishing file (backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_commentmeta.table.gz - 0.4 KB)
+0085.737 (0) Table wp_comments: Total expected rows (approximate): 0
+0085.790 (0) Table wp_comments: Total rows added: 1 in 0.04 seconds
+0085.831 (0) Table wp_comments: finishing file (backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_comments.table.gz - 0.7 KB)
+0085.914 (0) Table wp_links: Total expected rows (approximate): 0
+0085.968 (0) Table wp_links: Total rows added: 0 in 0.04 seconds
+0086.001 (0) Table wp_links: finishing file (backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_links.table.gz - 0.4 KB)
+0086.070 (0) Table wp_postmeta: Total expected rows (approximate): 1800
+0086.263 (0) Table wp_postmeta: Total rows added: 1853 in 0.18 seconds
+0086.305 (0) Table wp_postmeta: finishing file (backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_postmeta.table.gz - 25.1 KB)
+0086.380 (0) Table wp_posts: Total expected rows (approximate): 314
+0086.520 (0) Table wp_posts: Total rows added: 319 in 0.13 seconds
+0086.580 (0) Table wp_posts: finishing file (backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_posts.table.gz - 24.6 KB)
+0086.668 (0) Table wp_term_relationships: Total expected rows (approximate): 82
+0086.731 (0) Table wp_term_relationships: Total rows added: 91 in 0.05 seconds
+0086.764 (0) Table wp_term_relationships: finishing file (backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_term_relationships.table.gz - 0.6 KB)
+0086.849 (0) Table wp_term_taxonomy: Total expected rows (approximate): 15
+0086.898 (0) Table wp_term_taxonomy: Total rows added: 15 in 0.03 seconds
+0086.941 (0) Table wp_term_taxonomy: finishing file (backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_term_taxonomy.table.gz - 0.5 KB)
+0087.029 (0) Table wp_termmeta: Total expected rows (approximate): 0
+0087.076 (0) Table wp_termmeta: Total rows added: 0 in 0.03 seconds
+0087.107 (0) Table wp_termmeta: finishing file (backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_termmeta.table.gz - 0.4 KB)
+0087.186 (0) Table wp_terms: Total expected rows (approximate): 15
+0087.223 (0) Table wp_terms: Total rows added: 15 in 0.02 seconds
+0087.271 (0) Table wp_terms: finishing file (backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_terms.table.gz - 0.5 KB)
+0087.347 (0) backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_options.table.gz (1/12): adding to final database dump
+0087.371 (0) backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_users.table.gz (2/12): adding to final database dump
+0087.387 (0) backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_usermeta.table.gz (3/12): adding to final database dump
+0087.404 (0) backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_commentmeta.table.gz (4/12): adding to final database dump
+0087.421 (0) backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_comments.table.gz (5/12): adding to final database dump
+0087.437 (0) backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_links.table.gz (6/12): adding to final database dump
+0087.452 (0) backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_postmeta.table.gz (7/12): adding to final database dump
+0087.508 (0) backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_posts.table.gz (8/12): adding to final database dump
+0087.546 (0) backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_term_relationships.table.gz (9/12): adding to final database dump
+0087.594 (0) backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_term_taxonomy.table.gz (10/12): adding to final database dump
+0087.647 (0) backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_termmeta.table.gz (11/12): adding to final database dump
+0087.669 (0) backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db-table-wp_terms.table.gz (12/12): adding to final database dump
+0087.702 (0) backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db.gz: finished writing out complete database file (48 KB)
+0087.882 (0) Total database tables backed up: 12 (backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db.gz, size: 63379, sha256)
+0087.953 (0) backup_2018-11-06-0124_Lusine_0d0bb8697a3a-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+0087.976 (0) backup_2018-11-06-0124_Lusine_0d0bb8697a3a-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+0087.990 (0) backup_2018-11-06-0124_Lusine_0d0bb8697a3a-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+0088.005 (0) backup_2018-11-06-0124_Lusine_0d0bb8697a3a-others.zip: others: This file has not yet been successfully uploaded: will queue
+0088.021 (0) backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db.gz: db: This file has not yet been successfully uploaded: will queue
+0088.035 (0) Saving backup history. Total backup size: 25 MB
+0088.067 (0) Requesting upload of the files that have not yet been successfully uploaded (5)
+0088.128 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0088.143 (0) No remote despatch: user chose no remote backup service
+0088.167 (0) Recording as successfully uploaded: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-plugins.zip
+0088.196 (0) Recording as successfully uploaded: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-themes.zip
+0088.229 (0) Recording as successfully uploaded: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-uploads.zip
+0088.266 (0) Recording as successfully uploaded: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-others.zip
+0088.305 (0) Recording as successfully uploaded: backup_2018-11-06-0124_Lusine_0d0bb8697a3a-db.gz
+0088.356 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0088.371 (0) Number of backup sets in history: 1; groups (db): 1
+0088.385 (0) Examining (for databases) backup set with group_id=0, nonce=0d0bb8697a3a, datestamp=1541467470 (Nov 06 2018 01:24:30)
+0088.400 (0) This backup set is the backup set just made, so will not be deleted.
+0088.400 (0) Number of backup sets in history: 1; groups (files): 1
+0088.423 (0) Examining (for files) backup set with nonce=0d0bb8697a3a, datestamp=1541467470 (Nov 06 2018 01:24:30)
+0088.423 (0) This backup set is the backup set just made, so will not be deleted.
+0088.444 (0) This backup set is the backup set just made, so will not be deleted.
+0088.445 (0) This backup set is the backup set just made, so will not be deleted.
+0088.445 (0) This backup set is the backup set just made, so will not be deleted.
+0088.446 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0088.459 (0) Retain: saving new backup history (sets now: 1) and finishing retain operation
+0088.486 (0) Resume backup (0d0bb8697a3a, 0): finish run
+0088.524 (0) Decremented the semaphore (fd) by 1
+0088.589 (0) Semaphore (fd) unlocked
+0088.622 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0088.667 (0) No email will/can be sent - the user has not configured an email address.
+0088.681 (0) The backup apparently succeeded and is now complete

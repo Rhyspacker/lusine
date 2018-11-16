@@ -1,0 +1,330 @@
+// ==============================
+// card deck & filters
+// ========================================
+
+.card-deck {
+  &__filters {
+    @include list-unstyled;
+
+    li {
+      margin-bottom: $spacer-y/2;
+      &:focus {
+        outline: none !important;
+        -moz-outline-style: none;
+      }
+    }
+
+    @include mq($from: tablet, $until: desktop) {
+      max-width: 400px;
+      margin: 0 auto;
+      li {
+        margin-bottom: $spacer-y*2;
+      }
+    }
+
+    @include mq($from: tablet) {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      text-align: center;
+
+      li {
+        flex: 1 0 auto;
+
+        .card-deck__filter {
+          border: none;
+          //border: 3px solid transparent;
+          &.is--active {
+            //border: 3px solid white;
+          }
+        }
+      }
+    }
+
+    li {
+      position: relative;
+    }
+
+    li:last-child {
+      @include mq($from: tablet) {
+        margin-right: 0px;
+      }
+    }
+  }
+
+  &__filter {
+    @include mq($until: tablet) {
+      border: none;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0px;
+        transform: translateY(-50%);
+        background: none;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        border: 1px solid white;
+        transition: opacity 0.2s, width 0.3s;
+      }
+      &:active, &:focus {
+        outline:0 !important;
+        border: none;
+        -moz-outline-style: none;
+      }
+      &.is--active {
+        &:after {
+          background: white;
+        }
+      }
+    }
+    @include mq($from: tablet) {
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: $color-white;
+        width: 0px;
+        height: 3px;
+        opacity: 0;
+        transition: opacity 0.2s, width 0.3s;
+      }
+      &.is--active {
+        &:after {
+          width: 40px;
+          opacity: 1;
+        }
+      }
+      &:active, &:focus {
+        outline: none;
+        border: none;
+      }
+      &:active:focus {
+        outline: none;
+      }
+      &:hover:not(.is--active) {
+        &:after {
+          width: 10px;
+          background: $color-grey !important;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+
+// ==============================
+// card
+// ========================================
+
+.card {
+  position: relative;
+  margin-bottom: $card-margin-bottom;
+}
+
+// ==============================
+// card__inner
+// ========================================
+
+.card__inner {
+  background-color: $card-bg;
+  color: $card-color;
+  position: relative;
+}
+
+// ==============================
+// card__media
+// ========================================
+
+.card__media {
+  overflow: hidden;
+
+  img {
+    @include img-fluid;
+    width: 100%; // IE11 fix // TODO: Do we still need this?
+  }
+}
+
+// ==============================
+// card__logo - Used in card-person
+// ========================================
+
+.card__logo {
+  @include center-absolute;
+}
+
+// ==============================
+// card__body
+// ========================================
+
+.card__body {
+  padding: $card-padding-y $card-padding-x;
+  @include mq($from: desktop) {
+    padding: $card-padding-y-desktop $card-padding-x-desktop;
+  }
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+// ==============================
+// card__footer
+// ========================================
+
+.card__footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: $card-padding-y $card-padding-x;
+
+  @include mq($from: desktop) {
+    padding: $card-padding-y-desktop $card-padding-x-desktop;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+// ==============================
+// card__title
+// ========================================
+
+.card__title {
+  margin-bottom: $spacer-y/4;
+  font-family: $font-family-base;
+  font-size: $card-title-font-size;
+
+  @include mq($from: desktop) {
+    font-size: $card-title-font-size-lg;
+  }
+
+  a {
+    text-decoration: none;
+    word-wrap: normal;
+    color: inherit;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 70000;
+    }
+  }
+
+  // If the last item in ...__body remove margin-bottom
+  //
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// ==============================
+// card__subtitle
+// ========================================
+
+.card__subtitle {
+  margin-bottom: $spacer;
+  min-height: $spacer-y*2;
+  // If the last item in ...__body remove margin-bottom
+  //
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// ==============================
+// card__date
+// ========================================
+
+.card__date {
+  font-size: $card-date-font-size;
+  margin-bottom: $spacer-y*0.8;
+
+  @include mq ($from: desktop) {
+    font-size: $card-date-font-size-lg;
+  }
+}
+
+// ==============================
+// card__text
+// ========================================
+
+.card__text {
+  margin-bottom: $spacer-y*1.5;
+  font-size: $card-date-font-size;
+
+  @include mq ($from: desktop) {
+    font-size: $card-date-font-size-lg;
+  }
+
+  a {
+    position: relative;
+    z-index: 80000;
+  }
+}
+
+// ==============================
+// card__cta
+// ========================================
+
+.card__cta {
+  position: relative;
+  font-weight: bold;
+  z-index: 75000;
+}
+
+// ==============================
+// card__social
+// ========================================
+
+.card__social {
+  font-size: 0; // Removes whitespace around icons
+}
+
+// ==============================
+// card__modifiers
+// ========================================
+
+
+// External Links
+//
+.card--external-link {
+  position: relative;
+
+  .card__body {
+    padding-bottom: $spacer-y*2;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 22px;
+    height: 22px;
+    background: svg-url('<svg height="22" width="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 1024"><path d="M640 768H128V257.9l128-1.9V128H0v768h768V576H640v192zM384 128l128 128-192 192 128 128 192-192 128 128V128H384z" fill="#{$color-black}"/></svg>');
+  }
+}
+
+// Video modal
+//
+
+.card--video {
+
+}

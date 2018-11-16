@@ -1,0 +1,74 @@
+// ==============================
+// Page Header
+// ========================================
+
+.page-header {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  margin-top: 60px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background: svg-url('<svg height="30" width="30" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h50v50H0z"/><path fill="#{$color-white}" d="M47.25 15l-2.09-2.09L25 33.08 4.84 12.9 2.75 15 25 37.25z"/></svg>');
+    transition: opacity 0.3s;
+    animation: scrollDown 2s infinite;
+
+    @include mq($from: 769px) {
+      display: none;
+    }
+  }
+
+  &.has--scrolled {
+    &:after {
+      opacity: 0;
+    }
+  }
+
+  &__breadcrumb {
+    @include list-unstyled;
+    font-size: 16px;
+    li {
+      display: inline;
+    }
+
+    li {
+      &:not(:last-child) {
+        position: relative;
+        margin-right: 24px;
+        &:after {
+          content: '>';
+          position: absolute;
+          top: 0;
+          right: -20px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    bottom: 12px;
+  }
+  50% {
+    bottom: -12px;
+  }
+  100% {
+    bottom: 12px;
+  }
+}

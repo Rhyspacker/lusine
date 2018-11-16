@@ -10,6 +10,7 @@
 @import "mq";
 @import "mixins/clearfix";
 @import "mixins/hover";
+@import "mixins/functions";
 @import "variables";
 
 // ==============================
@@ -82,7 +83,7 @@
   }
 
   h1 {
-    color: $color-c-primary;
+    color: $color-b-primary;
     font-size: 30px;
     font-weight: 400;
 
@@ -93,7 +94,7 @@
 }
 
 code {
-  color: #660000;
+  color: $color-b-primary;
 }
 
 // ====================
@@ -108,7 +109,7 @@ code {
 
 .styleguide-h4 {
   border-bottom: 2px solid #f1f1f1;
-  color: #333;
+  color: #f9f9f9;
   font-size: 22px;
   font-weight: 400;
   margin-bottom: 16px;
@@ -116,7 +117,7 @@ code {
 }
 
 .styleguide-h5 {
-  color: #333;
+  color: #f9f9f9;
   font-size: 20px;
   font-weight: 400;
   margin-bottom: 16px;

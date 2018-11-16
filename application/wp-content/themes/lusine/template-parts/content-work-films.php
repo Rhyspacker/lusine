@@ -16,7 +16,7 @@
 ?>
 
 <div class="col-md-6 col-lg-4 col-xl-3 film">
-	<article class="card card--audio">
+	<article class="card">
 		<div class="card__inner">
 			<div class="card__media">
 				<div class="aspect--2-3">

@@ -28,14 +28,6 @@ if ( ! function_exists( 'lusine_setup' ) ) :
 		add_theme_support( 'automatic-feed-links' );
 
 		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
-		add_theme_support( 'title-tag' );
-
-		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
@@ -232,6 +224,8 @@ function news_post_type() {
 		),
 		'menu_position' => 4,
 		'exclude_from_search' => true,
+		'show_ui' => true, // defaults to true so don't have to include
+		'show_in_menu' => true, // defaults to true so don't have to include
 	);
 
 	register_post_type('news', $args);

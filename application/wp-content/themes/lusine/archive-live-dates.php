@@ -32,7 +32,15 @@ get_header();
             'posts_per_page'	=> -1,
             'meta_key'			=> 'live_date_date',
             'orderby'			=> 'meta_value',
-            'order'				=> 'DESC'
+            'order'				=> 'DESC',
+            'meta_query' => array( // WordPress has all the results, now, return only the events after today's date
+              array(
+                'key' => 'live_date_date', // Check the start date field
+                'value' => date("Y-m-d"), // Set today's date (note the similar format)
+                'compare' => '>=', // Return the ones greater than today's date
+                'type' => 'DATE' // Let WordPress know we're working with date
+              )
+            ),
           ));
 
           if ( $the_query->have_posts() ) :
@@ -70,7 +78,15 @@ get_header();
             'posts_per_page'	=> -1,
             'meta_key'			=> 'live_date_date',
             'orderby'			=> 'meta_value',
-            'order'				=> 'DESC'
+            'order'				=> 'DESC',
+            'meta_query' => array( // WordPress has all the results, now, return only the events after today's date
+              array(
+                'key' => 'live_date_date', // Check the start date field
+                'value' => date("Y-m-d"), // Set today's date (note the similar format)
+                'compare' => '<', // Return the ones greater than today's date
+                'type' => 'DATE' // Let WordPress know we're working with date
+              )
+            ),
           ));
 
           if ( $the_query->have_posts() ) :

@@ -188,6 +188,113 @@ get_header();
                 }
           		?>
 
+              <?php
+              /* Games */
+              $args = array(
+                'post_type' => 'work',
+                'tax_query' => array(
+                  array(
+                    'taxonomy' => 'work_category',
+                    'terms' => 13,
+                  ),
+                ),
+              );
+              $query = new WP_Query($args);
+
+                // The Loop
+                if ( $query->have_posts() ) {
+
+                  while ( $query->have_posts() ) {
+
+                    $query->the_post();
+
+                    /*
+                     * Include the Post-Type-specific template for the content.
+                     * If you want to override this in a child theme, then include a file
+                     * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+                     */
+                    get_template_part( 'template-parts/content-work-games', get_post_type() );
+
+
+                  }
+                  // Reset Query
+                  wp_reset_postdata();
+                }
+          		?>
+
+              <?php
+              /* Ads */
+              $args = array(
+                'post_type' => 'work',
+                'tax_query' => array(
+                  array(
+                    'taxonomy' => 'work_category',
+                    'terms' => 14,
+                  ),
+                ),
+              );
+              $query = new WP_Query($args);
+
+                // The Loop
+                if ( $query->have_posts() ) {
+
+                  while ( $query->have_posts() ) {
+
+                    $query->the_post();
+
+                    /*
+                     * Include the Post-Type-specific template for the content.
+                     * If you want to override this in a child theme, then include a file
+                     * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+                     */
+                    get_template_part( 'template-parts/content-work-ads', get_post_type() );
+
+
+                  }
+                  // Reset Query
+                  wp_reset_postdata();
+                }
+                else {
+                  ?>
+                  <p>TEST</p>
+                  <?php
+                }
+          		?>
+
+              <?php
+              /* Music Placements */
+              $args = array(
+                'post_type' => 'work',
+                'tax_query' => array(
+                  array(
+                    'taxonomy' => 'work_category',
+                    'terms' => 15,
+                  ),
+                ),
+              );
+              $query = new WP_Query($args);
+
+                // The Loop
+                if ( $query->have_posts() ) {
+
+                  while ( $query->have_posts() ) {
+
+                    $query->the_post();
+
+                    /*
+                     * Include the Post-Type-specific template for the content.
+                     * If you want to override this in a child theme, then include a file
+                     * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+                     */
+                    get_template_part( 'template-parts/content-work-music-placements', get_post_type() );
+
+
+                  }
+                  // Reset Query
+                  wp_reset_postdata();
+                }
+          		?>
+
             </div>
           </div>
         </div>

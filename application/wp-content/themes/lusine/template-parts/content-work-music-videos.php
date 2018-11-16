@@ -16,7 +16,7 @@
 ?>
 
 <div class="col-md-6 col-lg-4 col-xl-3 music-video">
-	<article class="card card--video">
+	<article class="card">
 		<div class="card__inner">
 			<div class="card__media">
 				<div class="aspect--1-1">

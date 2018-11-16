@@ -41,7 +41,7 @@ $ConvertedVideoSrc = convertYoutube($FeaturedVideoSrc);
 					<div class="col-md-6">
 						<h1 class="h1 mb-1 text--uppercase"><?php the_field('latest_release_title'); ?></h1>
 						<span class="divider divider--sm divider--center-tablet-down" aria-hidden="true"></span>
-						<p class="mt-2"><?php if( get_field('latest_release_listen_link') ): ?><a href="<?php the_field('latest_release_listen_link'); ?>" class="btn btn--light mr-1">Listen</a><?php endif; ?><a href="<?php the_field('latest_release_buy_link'); ?>" class="btn btn--light">Buy</a></p>
+						<p class="mt-2"><?php if( get_field('latest_release_listen_link') ): ?><a href="<?php the_field('latest_release_listen_link'); ?>" class="btn btn--light mr-1" target="_blank">Listen</a><?php endif; ?><a href="<?php the_field('latest_release_buy_link'); ?>" class="btn btn--light" target="_blank">Buy</a></p>
 					</div>
 				</div>
 			</div>
@@ -103,7 +103,15 @@ $ConvertedVideoSrc = convertYoutube($FeaturedVideoSrc);
 	            'posts_per_page'	=> 3,
 	            'meta_key'			=> 'live_date_date',
 	            'orderby'			=> 'meta_value',
-	            'order'				=> 'DESC'
+	            'order'				=> 'DESC',
+							'meta_query' => array( // WordPress has all the results, now, return only the events after today's date
+		            array(
+	                'key' => 'live_date_date', // Check the start date field
+	                'value' => date("Y-m-d"), // Set today's date (note the similar format)
+	                'compare' => '>=', // Return the ones greater than today's date
+	                'type' => 'DATE' // Let WordPress know we're working with date
+                )
+	            ),
 	          ));
 
 	          if ( $the_query->have_posts() ) :

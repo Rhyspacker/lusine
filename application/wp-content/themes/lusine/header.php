@@ -12,26 +12,31 @@
 global $wp;
 $current_url = home_url( add_query_arg( array(), $wp->request ) );
 
+$object = get_queried_object();
+$meta_description = get_field( 'meta_description', $object->name );
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<link rel="canonical" href="lusineweb.com/home.html">
-	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="canonical" href="<?php echo $current_url ?>">
+	<meta name="description" content="<?php echo $meta_description ?>" />
 	<meta name="name" content="<?php bloginfo('name'); ?>"/>
-
+	<title><?php if ( is_front_page() ) :?>Home | <?php endif; ?><?php wp_title('|',true,'right');?><?php bloginfo('name'); ?></title>
 	<meta property="og:site_name" content="<?php bloginfo('name'); ?>" />
+	<meta property="og:type" content="website"/>
 	<meta property="og:url" content="<?php echo $current_url ?>" />
-	<meta property="og:title" content="<?php wp_title('-',true,'right');?><?php bloginfo('name'); ?>" />
-	<meta property="og:description" content="" />
+	<meta property="og:title" content="<?php wp_title('|',true,'right');?><?php bloginfo('name'); ?>" />
+	<meta property="og:description" content="<?php echo $meta_description ?>" />
 	<meta property="og:image" content="<?php echo home_url() ?>/wp-content/themes/lusine/img/content/share-default.jpg" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="<?php echo home_url() ?>" />
-	<meta name="twitter:title" content="<?php wp_title('-',true,'right');?><?php bloginfo('name'); ?>" />
-	<meta name="twitter:description" content="" />
+	<meta name="twitter:title" content="<?php wp_title('|',true,'right');?><?php bloginfo('name'); ?>" />
+	<meta name="twitter:description" content="<?php echo $meta_description ?>" />
 	<meta name="twitter:image" content="<?php echo home_url() ?>/wp-content/themes/lusine/img/content/share-default.jpg" />
 	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo home_url() ?>/wp-content/themes/lusine/img/icons/apple-touch-icon.png">
 	<link rel="icon" type="image/png" href="<?php echo home_url() ?>/wp-content/themes/lusine/img/icons/favicon-32x32.png" sizes="32x32">

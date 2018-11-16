@@ -28,5 +28,5 @@
 		) );
 		?>
 	</p>
-	<?php if (get_field("press_item_link")) :?><a href="<?php the_field("press_item_link") ?>" class="btn btn--light btn--external">Read More</a><?php endif ?>
+	<?php if (get_field("press_item_link")) :?><a href="<?php the_field("press_item_link") ?>" class="btn btn--light btn--external" target="_blank">Read More</a><?php endif ?>
 </div>
